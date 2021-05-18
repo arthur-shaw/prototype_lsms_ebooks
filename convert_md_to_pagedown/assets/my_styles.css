@@ -1,0 +1,49 @@
+title {
+    color: #AB3A2D;
+}
+  
+h1 {
+    color: #AB3A2D;
+}
+  
+h2 {
+    color: #B1422F;
+    text-transform: uppercase;
+}
+
+.boxes {
+    background-color: #E7CBBF;
+    padding: 10px;
+    /* page-break-inside: avoid; */
+}
+
+.boxes.h2 {
+    text-transform: uppercase;
+}
+
+/* FAILED ATTEMPT TO CREATE RED BOOKMARK IN RIGHT-TOP MARGIN 
+@page chapter:right {
+    @right-top {
+        background-color: #AB382D;
+    }
+} */
+
+/* 
+/// front cover in hacky way--as first page
+.pagedjs_page.pagedjs_first_page {
+    background-size: 100%;
+    background-position: center 80%;
+    color: white;
+    background-color: #AB382D;
+    
+} 
+*/
+
+/* 
+/// back cover in hacky way--as last page
+.pagedjs_page:nth-last-of-type(1) {
+    background-color: #AB382D;
+    color: white;
+    font-size: x-small;
+    text-align: center;
+} */

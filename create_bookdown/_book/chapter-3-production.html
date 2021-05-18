@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Chapter 3: Production | Agricultural Survey Design</title>
+  <meta name="description" content="It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design ‘lessons learned’, we highlight tradeoffs between household survey design choices, measurement error and data use." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Chapter 3: Production | Agricultural Survey Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design ‘lessons learned’, we highlight tradeoffs between household survey design choices, measurement error and data use." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Chapter 3: Production | Agricultural Survey Design" />
+  
+  <meta name="twitter:description" content="It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design ‘lessons learned’, we highlight tradeoffs between household survey design choices, measurement error and data use." />
+  
+
+<meta name="author" content="Andrew Dillon, Gero Carletto, Sydney Gourlay, Philip Wollburg, Alberto Zezza" />
+
+
+<meta name="date" content="2021-05-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-2-survey-methodology-for-agricultural-data-collection.html"/>
+<link rel="next" href="chapter-4-agricultural-inputs.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Agricultural Survey Design</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="acronyms-and-abbreviations.html"><a href="acronyms-and-abbreviations.html"><i class="fa fa-check"></i>Acronyms and Abbreviations</a></li>
+<li class="chapter" data-level="1" data-path="chapter-1-introduction.html"><a href="chapter-1-introduction.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Introduction</a></li>
+<li class="chapter" data-level="2" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: Survey Methodology for Agricultural Data Collection</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#innovations-in-research-on-survey-design-choices"><i class="fa fa-check"></i><b>2.1</b> Innovations in Research on Survey Design Choices</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-units-of-analysis-for-agricultural-measurement"><i class="fa fa-check"></i><b>2.2</b> Survey Design Choices: Units of analysis for agricultural measurement</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-respondents"><i class="fa fa-check"></i><b>2.3</b> Survey Design Choices: Respondents</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-recall-periods"><i class="fa fa-check"></i><b>2.4</b> Survey Design Choices: Recall periods</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-minimizing-attrition-in-longitudinal-surveys"><i class="fa fa-check"></i><b>2.5</b> Survey Design Choices: Minimizing attrition in longitudinal surveys</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-3-production.html"><a href="chapter-3-production.html"><i class="fa fa-check"></i><b>3</b> Chapter 3: Production</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-3-production.html"><a href="chapter-3-production.html#land-measurement"><i class="fa fa-check"></i><b>3.1</b> Land Measurement</a></li>
+<li class="chapter" data-level="3.2" data-path="chapter-3-production.html"><a href="chapter-3-production.html#field-crop-production-and-yield-measurement-self-reported-remote-sensing-and-crop-cut-production-measures"><i class="fa fa-check"></i><b>3.2</b> Field Crop Production and Yield Measurement: Self-reported, remote-sensing, and crop-cut production measures</a></li>
+<li class="chapter" data-level="3.3" data-path="chapter-3-production.html"><a href="chapter-3-production.html#agricultural-production-data-design-features-of-the-reference-questionnaire"><i class="fa fa-check"></i><b>3.3</b> Agricultural Production Data: Design Features of the Reference Questionnaire</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html"><i class="fa fa-check"></i><b>4</b> Chapter 4: Agricultural Inputs</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#agricultural-labor"><i class="fa fa-check"></i><b>4.1</b> Agricultural labor</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#seed-fertilizer-pesticides-and-herbicides"><i class="fa fa-check"></i><b>4.2</b> Seed, fertilizer, pesticides and herbicides</a></li>
+<li class="chapter" data-level="4.3" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#machinery-and-farm-implements"><i class="fa fa-check"></i><b>4.3</b> Machinery and Farm Implements</a></li>
+<li class="chapter" data-level="4.4" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#agricultural-inputs-design-features-of-the-reference-questionnaires"><i class="fa fa-check"></i><b>4.4</b> Agricultural Inputs: Design Features of the Reference Questionnaires</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html"><i class="fa fa-check"></i><b>5</b> Chapter 5: Livestock</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#measuring-stocks"><i class="fa fa-check"></i><b>5.1</b> Measuring Stocks</a></li>
+<li class="chapter" data-level="5.2" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#costs-of-production"><i class="fa fa-check"></i><b>5.2</b> Costs of Production</a></li>
+<li class="chapter" data-level="5.3" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#income-sources"><i class="fa fa-check"></i><b>5.3</b> Income sources</a></li>
+<li class="chapter" data-level="5.4" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#challenges-to-livestock-measurement"><i class="fa fa-check"></i><b>5.4</b> Challenges to Livestock Measurement</a></li>
+<li class="chapter" data-level="5.5" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#livestock-data-design-features-of-the-reference-questionnaires"><i class="fa fa-check"></i><b>5.5</b> Livestock Data: Design Features of the Reference Questionnaires</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html"><i class="fa fa-check"></i><b>6</b> Chapter 6: Field Implementation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#fieldwork-implementation-tradeoffs-and-survey-design-choices"><i class="fa fa-check"></i><b>6.1</b> Fieldwork Implementation Tradeoffs and Survey Design Choices</a></li>
+<li class="chapter" data-level="6.2" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#piloting-for-improved-survey-design"><i class="fa fa-check"></i><b>6.2</b> Piloting for Improved Survey Design</a></li>
+<li class="chapter" data-level="6.3" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#mode-of-data-collection"><i class="fa fa-check"></i><b>6.3</b> Mode of Data Collection</a></li>
+<li class="chapter" data-level="6.4" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#fieldwork-organization-and-logistics"><i class="fa fa-check"></i><b>6.4</b> Fieldwork Organization and Logistics</a></li>
+<li class="chapter" data-level="6.5" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#plot-visits-and-georeferencing"><i class="fa fa-check"></i><b>6.5</b> Plot Visits and Georeferencing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><i class="fa fa-check"></i><b>7</b> Chapter 7: Conclusions and Future Directions for Agricultural Survey Design</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html#data-integration"><i class="fa fa-check"></i><b>7.1</b> Data Integration</a></li>
+<li class="chapter" data-level="7.2" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html#measuring-theoretical-concepts-more-precisely"><i class="fa fa-check"></i><b>7.2</b> Measuring Theoretical Concepts More Precisely</a></li>
+<li class="chapter" data-level="7.3" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html#open-measurement-questions-for-validation-research"><i class="fa fa-check"></i><b>7.3</b> Open Measurement Questions for Validation Research</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="appendix-i-agricultural-reference-questionnaire.html"><a href="appendix-i-agricultural-reference-questionnaire.html"><i class="fa fa-check"></i>Appendix I: Agricultural Reference Questionnaire</a></li>
+<li class="chapter" data-level="" data-path="appendix-ii-livestock-reference-questionnaire.html"><a href="appendix-ii-livestock-reference-questionnaire.html"><i class="fa fa-check"></i>Appendix II: Livestock Reference Questionnaire</a></li>
+<li class="chapter" data-level="" data-path="appendix-iii-glossary.html"><a href="appendix-iii-glossary.html"><i class="fa fa-check"></i>Appendix III: Glossary</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Agricultural Survey Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-3-production" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Chapter 3: Production</h1>
+<p>This chapter reviews agricultural survey design innovations and their methodological validation studies that inform survey design choices related to crop production. We focus on methodological innovations that have been validated either through survey design experiments or validation studies with an ‘objective’ measure. We first discuss measurement issues related to production before summarizing survey design choices and practical implementation in the reference questionnaire provided in the appendix of this volume.</p>
+<p>LSMS surveys have primarily taken a production function design objective with complementary questions related to farm revenues and costs without extensively providing a method to calculate farm profits. In early versions of the LSMS surveys and many other multi-topic household surveys, agricultural activities were not detailed at the plot level, as this requires a higher respondent burden relative to household level recall. One innovation of recent LSMS-ISA surveys has been to use the plot as the unit of analysis for field crop data collection. The advantage of this approach is that it more accurately measures the relationship between input and outputs in agricultural production when the household head may not manage all production. Production heterogeneity results from differences in crops cultivated that require different levels of inputs and management by several plot managers. The level of detail required in subsequent modules does not make this survey design choice trivial. Plot level data collection requires not only measuring land area at the plot level, but levels of production, labor, capital, chemical inputs, and land management techniques disaggregated at the plot level.</p>
+<p>Choosing to measure production at the plot level requires a wider series of choices in identifying the unit of analysis which has design and empirical implications. First, agricultural production is seasonal and may involve multiple crop cycles on a given plot that need to be measured. Second, plots are not always associated with a single crop, as multi-cropping or inter-cropping is an important land management practice to increase yield and land quality. Third, property rights are not necessarily well established in many rural contexts, and multiple family members may work on the plot or cultivate the plot in different seasons. The land owner may be different than the person making decisions to cultivate the land, as share-cropping, land leasing or land lending may mean that land owners are not making agricultural decisions. Holden et al. (2016) describe survey design choices in modules used to describe land tenure. Depending on the empirical applications of data collected, information on sources of land acquisition including inheritance and legal status, land transactions, formal and informal property rights, land conflicts, perceptions of tenure security and trust in land-related institutions may all be important additional questions complementary to the land roster. This is especially true if the survey aims to monitor Sustainable Development Goals related to land tenure, particularly SDG 5.a.1 and 1.4.2. Recognizing the importance of land tenure security as it relates to investment and the control of and access to other assets such as credit, both of these SDG Indicators seek to measure and monitor specific aspects of land tenure at the <em>individual</em> level, rather than at the household level.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>In summary, the key innovation in conducting plot-level production analysis is not to simply measure inputs and outputs at the plot level, but to distinguish the unit of analysis as plot-crop-season-manager. This unit of analysis facilitates comprehensive measurement of household production, allowing multiple analytical strategies from seasonal, crop and gender perspectives, but also has some limitations particularly in the context of a panel survey. Tracking plots is difficult between survey years which is one of the reasons that the LSMS-ISA surveys are conducted as a household panel (or household-parcel panel in select countries) with repeated cross-sections of plot, production, and input information. Another difficulty is related to plot characteristics that are relatively time-invariant within the survey period (such as soil characteristics, water source, plot topography) and time-varying characteristics (including labor, inputs, and capital utilization). We devote the next two chapters to the measurement of these time-invariant and time-variant characteristics but note that allocating these inputs and labor to the plot-crop-season-manager unit is often challenging.</p>
+<p>[]{#_Toc70494951 .anchor}Table 2. Survey Decisions that Inform Production Measurement</p>
+<table style="width:100%;">
+<colgroup>
+<col width="5%" />
+<col width="14%" />
+<col width="79%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><strong><em>Post-Planting Questionnaire</em></strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Questionnaire module</strong></td>
+<td><strong>Key design choice</strong></td>
+<td><strong>Motivation/Considerations</strong></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>PP 1 - Parcel Roster</strong></td>
+<td>Land area measurement with GPS</td>
+<td>Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of parcels for which the GPS area has not been measured.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Non-standard units of measurement for farmer self-reported land area.</td>
+<td>Reporting in standard units (square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>PP 2 - Parcel Details</strong></td>
+<td>Individual-level ownership determined</td>
+<td>Asset ownership, particularly of land in agrarian settings, is a critical factor of individual wealth and security. Individual-level ownership of land allows for gender-based analysis and monitoring of select SDG Indicators when coupled with other questions on land.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Network identification</td>
+<td> Network identification allows respondents to identify co-ownership of parcels with individuals outside of the household.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>PP 3 - Plot Roster</strong></td>
+<td>Land area measurement with GPS</td>
+<td>Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of plots for which the GPS area has not been measured.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Non-standard units of measurement for farmer self-reported land area.</td>
+<td>Reporting in standard units (for example, square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Plot as primary unit of observation for land preparation and crop planting information</td>
+<td>Plot-level data collection is designed to improve respondent recall and makes possible analysis of the data at the plot-level.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>PP 4 - Plot Details</strong></td>
+<td>Recording of plot manager</td>
+<td>Plot manager characteristics matter for plot level outcomes such as harvest. Identification of plot manager also allows for gender-specific productivity analysis, analysis of input allocation, gender-based crop cultivation patterns, etc.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Respondent selection/recording by plot</td>
+<td>- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about plot characteristics. Plot managers may differ from plot to plot which means that each plot may have a different respondent.<br />
+- For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the data at the same level of observation of the data.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>PP 6 - Crop Roster</strong></td>
+<td>Plot-crop as unit of observation for crops planted</td>
+<td> Allows for detailed accounting of each of the crops planted and enables plot-level analysis of production.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Permanent and temporary crops in the same roster but with differentiated questions.</td>
+<td>The plot may contain both permanent and temporary crops so both need to be reported in the same module, using the plot to anchor recall on planting. Permanent crops, such as trees, are likely not planted in the ongoing agricultural season, so year of planting instead of month of planting is recorded.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Reporting of seed quantity in non-standard units</td>
+<td>Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Reference period for seed acquisition is 'reference agricultural season'</td>
+<td>The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><em>Post-Harvest Questionnaire</em></strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Questionnaire module</strong></td>
+<td><strong>Key design choice</strong></td>
+<td><strong>Motivation/Considerations</strong></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>PH 7 - Field Crop Production</strong></td>
+<td>Respondent selection/recording by plot-crop</td>
+<td>- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about harvest. Plot managers may differ from plot to plot which means that each plot may have a different respondent.<br />
+- For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the harvest data.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Reporting of harvest quantity in non-standard units</td>
+<td>Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Reporting of harvest quantity in different conditions.</td>
+<td>The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Decision-maker concerning use of harvest recorded</td>
+<td>This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>PH 8 - Field Crop Disposition</strong></td>
+<td>Respondent selection/recording by crop</td>
+<td> Decision maker may vary from crop to crop, data considered most reliable if each decision-maker can respond in person rather than proxy response.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Reporting of harvest sales quantity in non-standard units</td>
+<td>Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Reporting of harvest sales quantity in different conditions.</td>
+<td>The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed.</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>Decision-maker concerning earnings from sold harvest recorded</td>
+<td>This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective.</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>Reference period for seed acquisition is 'reference agricultural season'</td>
+<td>The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.</td>
+</tr>
+</tbody>
+</table>
+<div id="land-measurement" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Land Measurement</h2>
+<p>We briefly review the land measurement literature and methodological guidance that has emerged from a recent set of land measurement experiments, primarily focused in sub-Saharan African countries. Much of this literature has been summarized in Carletto et al. (2016), but this literature continues to evolve, particularly as most empirical evidence has been focused on sub-Saharan African production systems. The extent of possible land measurement error is highly dependent on the method used to measure land size. Three common measurement methods include compass and rope, plot measurement with GPS devices, and farmer self-reported land size. Remotely sensed plot measurement is also feasible if the GPS coordinates of the plot and its boundaries are identified. A longstanding approach to collect land size is the compass and rope (CR) method which uses poles, ropes and a compass to carry out a systematic measure of land size (FAO 1982). With a compass, measuring tape, ranging poles, a programmable calculator or other computational tool, and two to three persons, the CR method can measure the area of a plot with significantly more accuracy than by subjective estimates. GPS and CR measures require careful implementation by a field team, though GPS measurements may also be affected by the GPS device’s calibration error which can be affected by environmental factors. GPS measurements may be subject to more error than CR since the coordinates measured by the GPS device are not exact.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> When carefully implemented, CR provides precise estimates, and it can therefore be considered as a benchmark against which to assess the precision of other methods. However, it should be noted that the compass and rope method is not immune to measurement error of its own. In their analysis of three methodological validation studies, Carletto et al. (2016 and 2017) illustrate various cases of closing error in compass and rope measurements as well as provide anecdotal evidence of the challenges of this form of measurement, including significant difficulty in the reading of compasses due to the poor eyesight of many enumerators.</p>
+<p>Although the CR method is highly accurate when performed properly, it is time consuming and costly due to the necessity of careful training, monitoring, transportation costs to individual farmer plots, and enumerator time spent measuring the plot. The use of GPS can on average require as little as 28 percent of the time needed for compass and rope (Keita and Carfagna, 2009; Schøning et al., 2005). Keita and Carfagna (2009) find that on small plots CR can take up to 17 times longer than GPS, though GPS measurement still requires survey team relocation to the plot and survey team time to trace the field’s perimeter. Similarly, Carletto et al. (2017) find that CR measurement takes approximately four times as long as GPS measurement on average, in methodological validation studies in Ethiopia and Tanzania. Because of this, many surveys rely on a farmer’s own estimate of land size which avoids the time and cost of actual measurement. However, self-reported estimates could be subject to greater error given that first, many farmers in developing countries acquire land through informal means where record keeping (and thus information on plot dimensions) is limited and second, farmers are more likely to give rounded and inexact size estimates.</p>
+<p>Most land measurements require the farmer to first identify the plot correctly for the interviewer. Plot measurements are then linked to the unique plot identifier, but misclassification is entirely possible. Because of the intensity of this field activity, monitoring systems are paramount to ensure that plots enumerated are actually visited and plot measures are properly linked to household survey data, particularly if the land measurement teams work independently of household interview teams.</p>
+<p>Donaldson and Storeygard (2016) review the integration of satellite data for economic analysis, noting that remotely sensed data were used as early as the 1930s to study US farmland production and land use practices<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. Agricultural statistics derived from remotely sensed data have been used primarily to compare land use information and changes over time, though applications to yields (Lobell et al., 2009) and economy-wide outcomes such as food security are becoming more common (Grace et al., 2014). Lobell et al. (2009), Grace et al. (2012, 2014), and Husak and Grace (2016) apply remote sensing to the estimation of yields, land use, and total agricultural production for a region, but are limited by their ability to link this data to specific households and other inputs in the agricultural production process.</p>
+<p>While a primary advantage of remote sensing data for land measurement and land characteristics is the ability to measure over large geospatial variation and easily construct panel measures of such variables, limitations of remotely sensed data are also described by Willis et al. (2015), Donaldson and Storeygard (2016), and Jain (2020). While remotely sensed data are not subject to respondent recall biases, satellite images are linked to GPS coordinates of farmer plots reported by farmers and images must be interpreted using either subjective evaluations or machine learning algorithms, both of which could be biased relative to actual plot size. Jain (2020) reviews errors in preprocessing imagery including sensor characteristics, satellite angle and atmospheric conditions. Validating classifications of plantation, agricultural and forestry land uses, Jain (2020) find that the error structure is non-random for remotely sensed data with an overall accuracy of 93.9percent of land classifications. Carletto et al. (2016) also note remotely sensed data used to measure land size may be more biased for plots with larger slope gradients than relatively flat plots due to interaction with sensor angles. The data generating process to use remotely classified data requires respondent input, measurement from remote sensors, and the processing of this information, linking data sources for interpretation and analysis. Remote sensing is not without potential implementation biases. Remotely sensed images must be relevant to the validation period’s season and year. Imagery must be of high resolution to facilitate respondent identification of plots. Respondents must be capable of identifying their plot on an image which may be complicated by changing plot boundaries or ambiguous plot boundaries. For these reasons, despite the advantages of remotely sensed data, empirical applications using remotely sensed data should also be careful of potential biases.</p>
+<p>Land <em>quality,</em> in addition to quantity, is essential for productivity measurement yet challenging to measure accurately in a household survey context. Household survey instruments, including the one included in Appendix I, typically collect information on soil quality and health through a series of subjective farmer assessments. Findings from methodological research, such as that by Carletto et al. (2017a) and Gourlay et al. (2017), illustrate the limitations of such subjective soil data, highlighting the limited variability observed in such data and the weak relationship of certain subjective questions, particularly overall soil quality, with laboratory-based soil quality indicators. This finding is echoed by Berazneva et al. (2018), who find in Kenya that farmer-reported soil type is reasonably correlated with objective measures of soil fertility while farmer-reported soil quality is not. The alternatives to subjective farmer assessment of soil in household surveys are the integration of laboratory testing, which is both logistically complex and costly, the use of in-situ tools for objective or pseudo-objective measures, and the integration of survey data with available geospatial soil products. While integration with publicly available geospatial soil products is likely the most cost-effective approach, recent research has found that current offerings inadequately capture variation in soil properties at the local level. Berazneva et al. (2018) and Gourlay et al. (2017), for example, both suggest that the Africa Soil Information Service (AfSIS) 250m soil map (Hengl et al., 2015) fail to sufficiently capture local-level variation vis-à-vis ground-based objective measures. The future of soil measurement in household surveys likely falls at the intersection of subjective, geospatial, and in-situ tools. Use of a sample of ground-based soil tests to calibrate geospatial soil products to better fit local conditions and farm management practices may result in improved soil parameters at a national level, for example. That, coupled with the growing availability and reliability of soil-assessment tools, including mobile applications like the Land Potential Knowledge System (LandPKS, landpotential.org) and handheld spectrometer technology suggests improved soil data in household surveys is soon to be realized, though additional methodological research is needed.</p>
+<p><em>Methodological studies on land area measurement bias</em></p>
+<p>The spread of GPS measured land size has led to several studies that examine the differences between the GPS and both CR and self-reported measures including the potential impact of measurement error resulting from inaccurate land size measurements. In two examinations of GPS versus CR measures in sub-Saharan Africa, Schøning et al. (2005) and Keita and Carfagna (2009) find that GPS based measurements are generally lower than CR measures though neither study provides a technical explanation for this difference. Both studies find that the GPS-CR difference is statistically significant for smaller plots but not for larger plots<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. It appears that for smaller plots, the fixed margin of error associated with determining GPS coordinates is large relative to the size of the plot and thus results in a greater measurement error. Since most plots in developing countries are relatively small, the potential for land mismeasurement using GPS could be significant. However, rounding of very small plot areas in Schoning et al. (all plots less than 0.01) clouds the reliability of their findings for smaller plots.</p>
+<p>A cross-country study by Carletto et al. (2015) showed that the error in farmer-estimated area is both significant in magnitude and systematic in nature. Data pooled from nationally-representative surveys in Niger, Malawi, Tanzania, and Uganda suggests that self-reported areas are underestimated by 2.5 percent relative to GPS measures on average, but that respondent estimation on the smallest plots is overestimated by more than 100 percent on average while respondents underestimate the area of larger plots (Carletto et al., 2015). Findings from methodological studies in Ethiopia, Tanzania, and Nigeria illustrate a similar trend, with self-respondent area estimation significantly overestimated on the smallest plots, with overestimation decreasing with plot size (Carletto et al., 2017). Findings from pooled data from methodological studies in Ethiopia, Tanzania, and Nigeria, however, suggest that on average GPS plot area measurements are only 1 percent different that the CR measurements (Carletto et al., 2017). On the smallest plots, those under 0.05 acres, the mean GPS and CR measures are not statistically different (Carletto et al., 2017). Similarly, Desiere (2015), in an analysis of more than 50,000 agricultural plots in Burundi, finds support for implementation of GPS measurement on small plots. The study finds that, for plots smaller than 500m<sup>2</sup>, bivariate regressions of GPS on CR explained approximately 97 percent of the variance, though they do cite increased precision of GPS measurements as plot size increases (Desiere, 2015).</p>
+<p>Several studies have found inconsistencies between GPS and self-reported land sizes (Goldstein and Udry 1999; Carletto, Savastano and Zezza, 2013; Carletto, Gourlay and Winters, 2015; Dillon et al., 2019; Dillon et al., 2021). Although ancillary to their main analysis, Goldstein and Udry (1999) found that the correlation between GPS and self-reported land size was only 0.15 in their dataset from Ghana. The authors do point out that, historically, field measurements in the region were based on length and not area and that this could partially explain the lack of a strong correspondence between farmer and GPS estimates. However, Carletto, Savastano, and Zezza (2013) also find a sizeable difference in Uganda though one that varies with plot size. The authors find that the bias is wider for smaller (less than 1.45 acres) and larger (greater than 3.58 acres) plots while self-reported measures are a reasonable estimate for medium size plots. In a similar analysis, Carletto, Gourlay, and Winters (2015) find inconsistencies between GPS and self-reported measurements in Malawi, Uganda, Tanzania, and Niger. They find that in all four countries self-reported plot sizes were higher than GPS for smaller plots but lower for larger plots, suggesting that farmers over-report the area of small plots and under-estimate the area of large plots. Carletto, Savastano, and Zezza (2013) find that in addition to plot size, the rounding of self-reported measurements, the age of the household head, and whether the plot was in a dispute with relatives were all positively associated with a greater GPS-self-report difference in land size in Uganda. Carletto, Gourlay, and Winters (2015) similarly find that rounding of farmer estimates are consistently associated with a difference between GPS and self-reported plot size in all four countries. Dillon et al. (2019) also find that GPS measurements of land area are similar to compass-and-rope (CR) estimates and more reliable than farmer estimates, where self-reported measurement bias leads to overreporting land sizes of small plots by 83 percent and underreporting of large plots by 21 percent of the compass and rope estimate. Their study in Nigeria finds that the error observed across land measurement methods is nonlinear, is not resolved by trimming outliers, and results in biased estimates of the inverse land size–productivity relationship. A key econometric advance in this paper is the ability to control for plot fixed effects which may bias parameter estimates. They also investigate input demand functions that rely on self-reported land measures and find that these measures significantly underestimate the effect of land on input utilization including fertilizer and household labor.</p>
+<p>Dillon et al. (2021) estimate measurement differences between self-reported, GPS and remotely sensed land size measures. In their comparison of results from Lao People’s Democratic Republic, Philippines, Thailand and Viet Nam, they find significant differences between GPS and remotely sensed data only in Viet Nam, where plot sizes are small relative to the other countries. The magnitude of farmers’ self-reporting bias relative to GPS measures is nonlinear and varies across countries, with the largest magnitude of self-reporting bias of 130 percent of a standard deviation (2.2-hectare bias) in the Lao People’s Democratic Republic relative to Viet Nam, which has 13.3 percent of a standard deviation (0.008-hectare bias). While the land measurement literature has expanded largely due to LSMS-ISA collaborations in Africa, variation across cropping systems in other continents can yield different types of land measurement biases in self-reported land data.</p>
+<p>[]{#_Toc70494952 .anchor}Table 3. Research on Land Area Measurement</p>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="6%" />
+<col width="59%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Paper</strong></th>
+<th><strong>Land measurement methods</strong></th>
+<th><strong>Country/Dataset</strong></th>
+<th><strong>Key insights</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goldstein and Udry (1999)</td>
+<td>Farmer self-report; GPS</td>
+<td>Eastern Ghana / <a href="http://www.econ.yale.edu/~udry/ghanadata.html">Agricultural Innovation and Resource Management in Ghanaian Households survey</a></td>
+<td><ul>
+<li><p>Correlation between self-reported and GPS measured plot size is only 0.15</p></li>
+<li><p>Proposed interpretation: agricultural history in Eastern Ghana in which local field measurements were often based on length rather than area, making it hard for respondents to report in square meters</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>De Groote and Traoré (2005)</td>
+<td>Farmer self-report; Compass and Rope</td>
+<td>Southern Mali / Field experiment data collected by Farming Systems Research team in Mali</td>
+<td><ul>
+<li><p>Relative to compass and rope, farmer self-reported area (supported by enumerators) over-estimated on small plots, under-estimated on large plots, but under-reported by 11 percent on average.</p></li>
+<li><p>Measurement error smaller for cotton fields than for cereals</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Schøning (2005)</td>
+<td>Farmer self-report; GPS; Compass and Rope</td>
+<td>Uganda / 2003 Uganda Pilot Census of Agriculture</td>
+<td><ul>
+<li><p>Difference between GPS and Compass and Rope is small and significant on small plots (&lt;0.5ha) but not on larger plots.</p></li>
+<li><p>Farmer self-report unreliable.</p></li>
+<li><p>Compass and Rope takes 3.5 times as long as GPS.</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Keita and Carfagna (2009)</td>
+<td>GPS; Compass and Rope</td>
+<td>Cameroon, Madagascar, Niger, Senegal / sample of 207 purposively selected plots from Cameroon, Madagascar, Niger, Senegal</td>
+<td><ul>
+<li><p>GPS tends to underestimate plot size relative to Compass and Rope, but the error is small.</p></li>
+<li><p>Accuracy of GPS appears to be higher without cloud cover.</p></li>
+<li><p>No correlation between plot size and difference between GPS and Compass and Rope measurements</p></li>
+<li><p>Compass and rope takes on average takes 3.8 times longer than GPS, and this is worse for medium and small plots.</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Carletto et al. (2013)</td>
+<td>Farmer self-report; GPS</td>
+<td>Uganda / <a href="https://catalog.ihsn.org/index.php/catalog/2348">Uganda National Household Survey 2005/06</a></td>
+<td><ul>
+<li><p>Relative to GPS, land area over-estimated on small plots, under-estimated on large plots.</p></li>
+<li><p>Other determinants of measurement error: rounding, boundary delineation of plot, tenure status of plot</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Carletto et al. (2015)</td>
+<td>Farmer self-report; GPS</td>
+<td>Malawi, Niger, Tanzania, Uganda / LSMS-ISA <a href="https://microdata.worldbank.org/index.php/catalog/1003">Malawi Integrated Household Survey 2010/11</a>, <a href="https://microdata.worldbank.org/index.php/catalog/1001">Uganda National Panel Survey 2009/10</a>, <a href="https://microdata.worldbank.org/index.php/catalog/1050">Tanzania National Panel Survey 2010/11</a>, <a href="https://microdata.worldbank.org/index.php/catalog/2050">Niger ECVM/A 2011</a></td>
+<td><ul>
+<li><p>Relative to GPS, self-reported area of small plots (less than 0.5 acres) systematically over-estimated.</p></li>
+<li><p>Degree of over-estimation varies, but in all countries the mean self-reported area is overestimated by at least 90 percent of the mean GPS area of plots on small plots.</p></li>
+<li><p>Area of large plots under-estimated</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Desiere (2015)</td>
+<td>GPS; Compass and Rope</td>
+<td>Burundi / <a href="http://www.isteebu.bi/nada/index.php/catalog/2">Enquete nationale agricole du Burundi 2011/12</a></td>
+<td><ul>
+<li><p>GPS slightly over-estimates area relative to Compass and Rope area but the under-estimation is negligible</p></li>
+<li><p>GPS is reliable even on smaller plots (less than 0.5 hectares), with reliability increasing rapidly for plots larger than 0.1 hectares.</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Carletto et al. (2016 and 2017)</td>
+<td>Famer self-report; GPS; Compass and Rope</td>
+<td>Ethiopia, Nigeria, Tanzania (Zanzibar) / <a href="https://datacatalog.worldbank.org/dataset/ethiopia-land-and-soil-experimental-research-2013">Ethiopia Land and Soil Experimental Research 2013</a>, <a href="https://microdata.worldbank.org/index.php/catalog/2842/datafile/F5">Nigeria Area Measurement Validation Study</a>, Measuring Cassava Productivity study Tanzania (Zanzibar)</td>
+<td><ul>
+<li><p>Error in self-reported area depends on plot area, with small plots over-estimated, large plots under-estimated.</p></li>
+<li><p>In comparison to Compass and Rope, GPS is generally very reliable.</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Kilic et al. (2017)</td>
+<td>Famer self-report; GPS</td>
+<td>Uganda, Tanzania / <a href="https://microdata.worldbank.org/index.php/catalog/1001">Uganda National Panel Survey 2009/10</a>, <a href="https://microdata.worldbank.org/index.php/catalog/1050">Tanzania National Panel Survey 2010/11</a></td>
+<td><ul>
+<li><p>Not all plots are measured with GPS because some are too far away or otherwise inaccessible, which may lead to bias.</p></li>
+<li><p>Farmer self-reports are predictive of GPS measured area so that Multiple Imputation techniques can be used to impute area of plots where GPS is missing.</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Dillon and Rao (2021)</td>
+<td>Farmer self-report; GPS; satellite data</td>
+<td>Lao PDR, Philippines, Thailand, Vietnam / land measurement experiment among rice producers</td>
+<td><ul>
+<li><p>Remotely sensed plot area differs from GPS area estimate only in Viet Nam, where plot sizes are small.</p></li>
+<li><p>Farmer self-reported plot area estimates are most overstated for small plots.</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Dillon et al. (2019)</td>
+<td>Famer self-report; GPS; Compass and Rope</td>
+<td>Nigeria / <a href="https://microdata.worldbank.org/index.php/catalog/1952">Nigeria General Household Survey 2012/13</a></td>
+<td><ul>
+<li><p>GPS more reliable than self-reporting, relative to Compass and Rope</p></li>
+<li><p>Farmers underestimate land area on large plots and overestimate it on small plots.</p></li>
+<li><p>GPS error is relatively small relative to Compass and Rope.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="field-crop-production-and-yield-measurement-self-reported-remote-sensing-and-crop-cut-production-measures" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Field Crop Production and Yield Measurement: Self-reported, remote-sensing, and crop-cut production measures</h2>
+<p>Accurate measures of production likely rely on reducing the cognitive burden of reporting for the respondent. As applied to the measurement of production, plot-level recall by plot managers may actually be cognitively less burdensome than asking a respondent, potentially the head of household, to aggregate across all household plots to report production. Plot level production reporting also allows women’s production to be more accurately measured if intrahousehold gender asymmetries exist. In facilitating respondents’ accurate reporting, a principle of agricultural survey design has been to let respondents report in the units in which they have measured their own production. This principle opens the possibility that respondents may not use standard units of measures, such as kilograms to report production.</p>
+<p>Oseni et al. (2017) present a comprehensive guide for measuring conversions from non-standard units to standard units for consumption and agricultural production data. Conversions require not only question response category flexibility to allow respondents to report quantities in non-standard units, but inter-linked data collected through market surveys to measure systematically conversions of non-standard units by crop or product into standardized units (kilograms or liters). Alternative approaches to collecting non-standard unit conversions formally in the market survey is to design a module to ask respondents directly for conversions, but a respondent’s estimate of the conversion factor may not be made based on objective standards, creating bias in measures across respondents that is directly correlated with their conversion estimation skill. A significant benefit of CAPI implemented interviews is the possibility to document in advance non-standard measures which provide easier reference for respondents, as well as a pre-loaded conversion factor. A classic example is bunches of bananas for which standardizing even this non-standard measure is particularly challenging.</p>
+<p>Alternatives to self-reported production include more intensive field approaches such as crop-cutting or integrated survey techniques such as first geo-referencing plots and then estimating production using remotely sensed data, or remotely sensed data in combination with ground-based data. It is important to underscore that using either crop-cutting or remotely sensed data to measure production involves <em>estimation</em> of production quantities. While these approaches may be more reliable than self-reported production by farmers, they are not without bias themselves. Researchers should avoid labeling these measures as objective or direct measures unless the full plot is crop-cut because plot samples are used to then extrapolate total plot production.</p>
+<p>Crop-cutting methods of plot production estimation and yield calculation can be undertaken using several different measurement methods. Plots are defined by field teams and respondents to delineate the plot’s size. Plot size is measured often using either compass and rope or GPS techniques. The plot area is demarcated, and a crop-cutting rule is implemented where the field area is sampled, the sampled plot areas are clear cut, production is dried, weighed, and then based on the sampling fraction of the plot samples, total production is estimated. Crop-cuts are estimates of crop production, potentially more reliable than self-reports, but subject to biases from the measurement process. First, budgets will determine the sampling fraction of plot subsamples taken from the plot from which the plot production estimate will be calculated. The higher the sampling fraction, the more reliable the plot estimate. Second, crops must then be dried, threshed and weighed which often takes additional days of fieldwork, sample tracking protocols, and standardization of drying and weighing techniques. Finally, the plot sub-sample production weights are then used to extrapolate the total plot production measure. Crop production may vary within plot due to planting techniques, plot slope that may pool water differentially within the plot, uniformity of plot fertilization and weeding, or soil quality. Animal infestation or weather damage may also not be uniform within the plot. Fermont and Benson (2011) review the sources of bias and history of crop cutting in Ugandan agricultural surveys, noting the widespread variation in crop cutting measurement methods and yield estimates using various crop-cutting measures.</p>
+<p>A large body of literature has focused on comparisons of crop-cut measures relative to self-reported measures, particularly focused on the empirical relationship between yield and land size. Desiere and Joliffe (2018) find that self-reports over-estimate yield on small plots and underestimate yield on large plots relative to the crop cut measures which they use as their validation measure. Their production results largely corroborate evidence from the land measurement literature that find nonlinear plot reporting effects, particularly for smaller plots. Gourlay et al. (2019) find similar results in the analysis of maize in Uganda, with self-reported yields being significantly overestimated on the smallest plots (by more than 3,500kg/ha on average in the smallest plot area quintile). A divergence between self-reported and crop-cut-based yields is also observed by Lobell et al. (2020) who find that, although the means are similar, self-reported estimates of sorghum yields in Mali are only weakly correlated with yields measured via crop-cutting (correlation coefficient of 0.33). Bevis and Barrett (2020) argue that agricultural labor intensity increases at a plot’s edge and thus drives erroneous production self-reports and the inverse land size relationship in their paper which also uses crop-cuts to measure production. Abay et al. (2019) estimate the magnitude of bias on the inverse land size relationship describing potential econometric implications of correcting both land size and production measures. An important insight from econometric applications that they apply to agricultural data is that correcting one measurement error in either land or production estimates may increase bias when measurement errors are correlated. They find that reducing bias by using crop-cutting production measures with compass and rope land measures causes the inverse land size relationship to disappear in their Ugandan sample.</p>
+<p>The evidence on remote sensing to measure production is an evolving scientific field. Carfagna and Gallego (2005) argue that remotely sensed data are particularly useful for area frame measurement to define sampling units but hesitate to recommend remotely sensed images to estimate crop production because the classification of pixels assigned to specific crops is often strongly biased. This is one of the reasons remote sensing-based estimation of yields in intercropped areas is particularly challenging, as discussed in Lobell et al. (2019). This field continues to evolve and identification algorithms linked to biological science are improving. It is important to remember that measurement of plot production is based on models of interpreting visual images that correspond to biological plant growth. Brown and Pervez (2014) provide evidence in the US context that some models of production prediction are increasingly accurate to measure land use and production, calibrating and validating their models with USDA data. In Uganda, Lobell et al. (2019) estimate maize plot yields using (i) full plot crop cuts, (ii) partial, sub-plot crop-cutting, and (iii) remotely sensed images of plot yields. To estimate yields via remote sensing imagery, Lobell et al. (2019) estimate two models, one calibrated on ground-based, crop-cutting data and one without calibration of ground data. They find that calibrated remotely sensed yield estimates captured half the variability of yield estimates in comparison to full-plot crop cut production measures for plot sizes above 0.1 hectare. Uncalibrated remotely sensed yield estimates were one ton per hectare higher than crop-cut measures. These results are both incredibly encouraging and require a further research agenda to better understand best practices for remotely sensed yield estimates that extend to a wider set of crops.</p>
+<p><em>Challenges to production measurement in intercropped systems</em></p>
+<p>Much of the literature on production measurement has considered the case of a single field crop, but farming systems are often more complex and not all agricultural production is based on field crops. We review measurement approaches when planting techniques on a plot use mixed, multiple crops or inter-cropping techniques as well as cases of roots, tubers and tree crops whose harvest period may be multiple rather than at a singular period of time in the production process. The LSMS-Integrated Surveys on Agriculture incorporate seasonal planting and harvest for annual crops in its biannual interview structure, but concern over recall bias for root, tuber and tree crops that do not overlap with the main agricultural season varies across agro-ecological zones and across national surveys. Production surveys focused on root, tuber and tree crops are often timed to the main harvest periods for these crops, but supplement production reports with higher frequency surveys. Kilic et al. (2018) conduct a survey experiment in Malawi over a 12-month period where variations of diary and farmer recall are used to produce cassava production estimates. Their production reporting treatments vary the recall period (daily diary recalls (supervised in person or via telephone), six-month and annual recalls). The survey experiment indicates that annual recall underestimates annual production by 21 percent relative to the in-person supervised diary visit. Daily diary reporting supervised by a telephone visit increased annual production reports by 28 percent compared to the in-person supervised diary visits.</p>
+<p>We have also sidestepped an important complication in crop production measurement, specifically the case when production systems use mixed or inter-cropping planting techniques. LSMS-ISA data from Tanzania, for example, indicates that approximately 64 percent of cultivated plots are cultivated with more than one crop (Wineman et al., 2019). Estimating both land area apportioned to a particular crop and its production is particularly challenging. Measuring yields on these intercropped plots can take many forms, through varying methods of estimating the denominator, including: (i) using the full plot area for each crop; (ii) using the share of plot area under a given crop, identified by seeding rate, plant density, or area estimation, such that the total cultivated area sums to the total plot area; (iii) allocating total plot area equally across crops cultivated on the plot such that the total cultivated area sums to the total plot area; or (iv), imputing the area which a crop would occupy if it were mono-cropped (where the total cultivated area summed across crops may exceed the total plot area). Most household surveys acknowledge the complications of production and input estimates on inter-cropped plots by identifying these plots and apportioning the area planted to divide plot-level input reports to production reported by crop. Proportional input attribution implies crop input demands including fertilizer, weeding, and harvest time are similar by crop.</p>
+<p>The Global Strategy to Improve Agricultural and Rural Statistics (2018) provides methodological guidance on implementing the above methods to measuring the area under a given crop in intercropped systems. However, a best practice recommendation supported by a methodological survey experiment is not currently available. Remote sensing or crop-cut production estimates are possible alternatives, but these measures are also challenging to implement. Lobell et al. (2019) report lower accuracy of remotely sensed production estimates compared to crop-cut production estimates for maize intercropped plots in Uganda.</p>
+<p>[]{#_Toc70494953 .anchor}Table 4. Research on Production Measurement</p>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="11%" />
+<col width="45%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Paper</strong></th>
+<th><strong>Production measurement methods</strong></th>
+<th><strong>Crop/Country/Dataset</strong></th>
+<th><strong>Key insights</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fermont and Benson (2011)</td>
+<td>Various, especially farmer self-report vs crop cutting</td>
+<td>Various/Various, focus on Uganda / Various production datasets, Agricultural Censuses from 1965, 1990-91, 2008-09; Annual Survey from 1967-68, <a href="https://catalog.ihsn.org/index.php/catalog/2349">Uganda National Household Survey 1999/2000</a> and <a href="https://catalog.ihsn.org/index.php/catalog/2348">2005/06</a></td>
+<td><ul>
+<li><p>Crop cutting associated with over-estimation of production in many contexts</p></li>
+<li><p>Farmer estimation of production also exhibits significant biases; appear to be closer to objective measures in several cases.</p></li>
+<li><p>Lack of systematic evidence on sources and effects of biases make recommendation impossible</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Deininger et al. (2012)</td>
+<td>Farmer self-report; harvest diaries</td>
+<td>Various/Uganda / <a href="https://catalog.ihsn.org/index.php/catalog/2348">Uganda National Household Survey 2005-06</a></td>
+<td><ul>
+<li><p>End-of-season recall diverges significantly from harvest diaries, which are deemed more reliable.</p></li>
+<li><p>Findings vary by crop type: for most crops, end-of-season recall associated with under-reporting, especially for extended-harvest crops such as cassava or banana; cash crop production recorded as significantly higher in end-of-season recall module.</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Kilic et al. (2018)</td>
+<td>Farmer self-report; harvest diaries; crop cutting</td>
+<td>Cassava/Malawi / Methodological Experiment on Measuring Cassava Production, Productivity, and Variety Identification 2015-16</td>
+<td><ul>
+<li><p>Comparison of weekly harvest diaries to two different recall methods for cassava production in Malawi: a single visit with a 12-month reference period and two visits with 6-month reference periods.</p></li>
+<li><p>Relative to crop cutting, the recall methods lead to under-reporting, especially with 12-month reference period.</p></li>
+<li><p>Crop cutting is an upper bound for extended harvest crop cassava.</p></li>
+<li><p>Harvest diaries, especially with the support of mobile phones, perform well to capture cassava production.</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Desiere and Jolliffe (2018)</td>
+<td>Farmer self-report; crop cutting</td>
+<td>Maize/Ethiopia / <a href="https://microdata.worldbank.org/index.php/catalog/2053">Ethiopia Socioeconomic Survey 2011-12</a> and <a href="https://microdata.worldbank.org/index.php/catalog/2247">2013-14</a></td>
+<td><ul>
+<li>Relative to the crop cut benchmark, respondents over-report maize production on small plots and under-report it on large plots.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Gourlay et al. (2019)</td>
+<td>Farmer self-report; partial and full plot crop cutting</td>
+<td><p>Maize/Uganda /</p>
+<p>Methodological Experiment on Measuring Maize Productivity, Soil Fertility and Variety 2015 and 2016</p></td>
+<td><ul>
+<li><p>Relative to the crop cut benchmark, respondents significantly over-report maize production on smaller plots.</p></li>
+<li><p>Over-reporting is related to rounding/heaping</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Abay et al. (2019)</td>
+<td>Farmer self-report; crop cutting</td>
+<td>Wheat/Ethiopia / Randomized controlled trial of 482 wheat farmers in Ethiopia 2013-14</td>
+<td><ul>
+<li>Relative to crop cutting, self-reporting overestimates production, with small plots overestimating more than large plots.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Bevis and Barrett (2020)</td>
+<td>Farmer self-report</td>
+<td>Various/Uganda /IFPRI, UBOS, and National Science Foundation <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304387818308642">panel survey</a> of 972 households, 2002-3 and 2013.</td>
+<td><ul>
+<li>The edges of plots are more productive than the inside, which may explain why farmers overstate yield on small plots and understate yield on large plots and may also affect reliability of crop cuts.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Lobell et al. (2019)</td>
+<td>Remote sensing; farmer self-report; crop cutting; full plot crop cutting</td>
+<td>Maize/Uganda/ Methodological Experiment on Measuring Maize Productivity, Soil Fertility and Variety 2015 and 2016</td>
+<td><ul>
+<li><p>Self-reported performed very poorly relative to full-plot crop cut.</p></li>
+<li><p>On average, difference between partial crop cut and full-plot crop cut not significant.</p></li>
+<li><p>Crop cut yield estimates captured one-quarter of full crop cut yield variability.</p></li>
+<li><p>Both calibrated and uncalibrated satellite yield estimates captured half of full crop cut yield variability on pure stand plots above 0.10 hectare.</p></li>
+<li><p>Uncalibrated yield estimates were consistently one ton per hectare higher than full-plot and partial crop cut.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="agricultural-production-data-design-features-of-the-reference-questionnaire" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Agricultural Production Data: Design Features of the Reference Questionnaire</h2>
+<p>We explain the questionnaire structure in the post-planting and post-harvest reference questionnaires that relate to measuring production that are reviewed in this chapter and earlier summarized in Table 2 “Survey decisions that Inform Production Measurement.” To measure production and farm productivity using yields, the reference questionnaire first enumerates the household’s parcels in the post-planting questionnaire using the parcel roster and parcel details which includes the parcel’s size and tenure status. A parcel is defined as a piece of land exploited by one or more persons as a single farming unit. A parcel may be bounded by natural boundaries and may comprise one or more plots. After parcels are listed, plots within parcels and their characteristics are recorded in the plot roster and plot details. A plot is defined as a continuous piece of land on which a unique crop or a mixture of crops is grown, under a uniform, consistent crop management system. All outputs and inputs are recorded at the plot level.</p>
+<p>The primary differences in the parcel and plot details modules of the questionnaire relate to the acquisition of the parcel and its tenure status in the parcel details module, and the management and soil characteristics of the plot including water sources and soil type in the plot details module. The crop roster in module 6 documents at the parcel-plot-crop level the list of crops cultivated on the plot during the reference agricultural season and seed varieties. The module also includes a question about productivity expectations which can be used to compare with actual productivity recorded in the post-harvest questionnaire.</p>
+<p>In the post-harvest questionnaire, the parcel and plot roster can be updated in modules 1 and 2. The plot-crop roster in module 6 validates the crops that were reported to have been planted from the post-planting questionnaire and records information on why crops may not have been harvested. The primary sections of the questionnaire related to production are found in modules seven to ten. Modules seven and eight record information on production and the disposition of field crops, while modules nine and ten capture production and disposition of permanent tree crops.</p>
+<p>The field crop production module includes information on field crop harvest including when the harvest of a particular parcel-plot-crop unit began, what percentage of the crop was harvested, and self-reported production information. If the harvest has not been completed, information is collected on when the harvest is expected to be completed and how much of the harvest had been completed to date. Finally, information on who controls the disposition of the crop harvest is recorded by respondent ID. The disposition of field crops is focused on capturing unprocessed crops sales including the quantity and total value of such sales. The volume of transactions related to the total sold and the transportation costs associated with the crop sales are also recorded. Other dispositions of field crops include auto-consumption, gifting and in-kind payments. Lastly, the storage of crops is recorded including the quantity and method of storing. The intended use of the storage for later sale, future consumption, use as seed or animal feed are asked in this module.</p>
+<p>We make special note in this section of the questionnaire on the calculation of output prices from the sales data recorded in these modules. Revenues recorded provide the basis for the calculation of output prices, but special note of the location of sale is important analytically. In theory, farmgate prices should reflect the output price from sale on the farm or local market, yet crop sales often occur in markets outside of the farmer’s village. Revenue from sales in larger markets outside the farmer’s village may include transportation cost premiums above the actual farmgate price. The timing of sale may also affect imputed output prices from revenue data. A large literature explores the seasonality of crop prices which may reflect risk or storage premiums in addition to the farmgate price. From this discussion, it is also clear that not all revenue sales represent the ‘market’ price as a market survey might collect. In the literature on food prices imputed from expenditure surveys, Deaton and Zaidi (2002) recommend taking the village or enumeration area median price to impute consumption per capita to account for variations in food prices. In a similar sense, estimating output prices from agricultural modules ideally would account for sale location as well as the timing of sale.</p>
+<p>The tree and permanent crop production module is organized in a different manner than the field crop module. The primary motivation for this difference is that the number of trees per plot is necessary to estimate yield for tree crops. The last harvest date is recorded as well as the quantity of production and any losses on the parcel-plot-tree/permanent crop unit of analysis. The tree and permanent crop disposition module is similar in structure to the field crop disposition module, but uses a 12-month recall period.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>For more detailed guidance on data collection for monitoring SDGs 5.a.1 and 1.4.2, on land tenure, refer to the guidance document developed by the custodian agencies (FAO, The World Bank, and UN Habitat, 2019); available here: <a href="http://documents.worldbank.org/curated/en/145891539095619258/pdf/Measuring-Individuals-Rights-to-Land-An-Integrated-Approach-to-Data-Collection-for-SDG-Indicators-1-4-2-and-5-a-1.pdf" class="uri">http://documents.worldbank.org/curated/en/145891539095619258/pdf/Measuring-Individuals-Rights-to-Land-An-Integrated-Approach-to-Data-Collection-for-SDG-Indicators-1-4-2-and-5-a-1.pdf</a><a href="chapter-3-production.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Standard GPS devices have reported position accuracy of approximately ten meters depending on the model’s satellite calibration algorithm (<a href="http://www8.garmin.com/aboutGPS/" class="uri">http://www8.garmin.com/aboutGPS/</a>). GPS receivers using WAAS (Wide Area Augmentation System) can have accuracy of three meters by correcting for atmospheric conditions.<a href="chapter-3-production.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>In addition to land use information, Donaldson and Storeygard (2016) note remote sensing data sources available to produce data related to mineral deposits, elevation, terrain, and land cover, as well as airborne pollution, fish abundance and electricity use.<a href="chapter-3-production.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Schøning et al. (2005) find a statistically significant difference for plots under 0.5 hectares but not for plots equal to or greater than 0.5 hectares. Keita and Carfagna (2009) separate their sample into five clusters based on plot size. They find a statistically significant difference for the clusters with the lowest land size but not for the clusters with larger plots. However, they do not specify the plot size range for each cluster.<a href="chapter-3-production.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-2-survey-methodology-for-agricultural-data-collection.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-4-agricultural-inputs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["create_bookdown.pdf", "create_bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

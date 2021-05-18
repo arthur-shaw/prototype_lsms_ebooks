@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Chapter 6: Field Implementation | Agricultural Survey Design</title>
+  <meta name="description" content="It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design ‘lessons learned’, we highlight tradeoffs between household survey design choices, measurement error and data use." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Chapter 6: Field Implementation | Agricultural Survey Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design ‘lessons learned’, we highlight tradeoffs between household survey design choices, measurement error and data use." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Chapter 6: Field Implementation | Agricultural Survey Design" />
+  
+  <meta name="twitter:description" content="It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design ‘lessons learned’, we highlight tradeoffs between household survey design choices, measurement error and data use." />
+  
+
+<meta name="author" content="Andrew Dillon, Gero Carletto, Sydney Gourlay, Philip Wollburg, Alberto Zezza" />
+
+
+<meta name="date" content="2021-05-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-5-livestock.html"/>
+<link rel="next" href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Agricultural Survey Design</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="acronyms-and-abbreviations.html"><a href="acronyms-and-abbreviations.html"><i class="fa fa-check"></i>Acronyms and Abbreviations</a></li>
+<li class="chapter" data-level="1" data-path="chapter-1-introduction.html"><a href="chapter-1-introduction.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Introduction</a></li>
+<li class="chapter" data-level="2" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: Survey Methodology for Agricultural Data Collection</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#innovations-in-research-on-survey-design-choices"><i class="fa fa-check"></i><b>2.1</b> Innovations in Research on Survey Design Choices</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-units-of-analysis-for-agricultural-measurement"><i class="fa fa-check"></i><b>2.2</b> Survey Design Choices: Units of analysis for agricultural measurement</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-respondents"><i class="fa fa-check"></i><b>2.3</b> Survey Design Choices: Respondents</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-recall-periods"><i class="fa fa-check"></i><b>2.4</b> Survey Design Choices: Recall periods</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-survey-methodology-for-agricultural-data-collection.html"><a href="chapter-2-survey-methodology-for-agricultural-data-collection.html#survey-design-choices-minimizing-attrition-in-longitudinal-surveys"><i class="fa fa-check"></i><b>2.5</b> Survey Design Choices: Minimizing attrition in longitudinal surveys</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-3-production.html"><a href="chapter-3-production.html"><i class="fa fa-check"></i><b>3</b> Chapter 3: Production</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-3-production.html"><a href="chapter-3-production.html#land-measurement"><i class="fa fa-check"></i><b>3.1</b> Land Measurement</a></li>
+<li class="chapter" data-level="3.2" data-path="chapter-3-production.html"><a href="chapter-3-production.html#field-crop-production-and-yield-measurement-self-reported-remote-sensing-and-crop-cut-production-measures"><i class="fa fa-check"></i><b>3.2</b> Field Crop Production and Yield Measurement: Self-reported, remote-sensing, and crop-cut production measures</a></li>
+<li class="chapter" data-level="3.3" data-path="chapter-3-production.html"><a href="chapter-3-production.html#agricultural-production-data-design-features-of-the-reference-questionnaire"><i class="fa fa-check"></i><b>3.3</b> Agricultural Production Data: Design Features of the Reference Questionnaire</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html"><i class="fa fa-check"></i><b>4</b> Chapter 4: Agricultural Inputs</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#agricultural-labor"><i class="fa fa-check"></i><b>4.1</b> Agricultural labor</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#seed-fertilizer-pesticides-and-herbicides"><i class="fa fa-check"></i><b>4.2</b> Seed, fertilizer, pesticides and herbicides</a></li>
+<li class="chapter" data-level="4.3" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#machinery-and-farm-implements"><i class="fa fa-check"></i><b>4.3</b> Machinery and Farm Implements</a></li>
+<li class="chapter" data-level="4.4" data-path="chapter-4-agricultural-inputs.html"><a href="chapter-4-agricultural-inputs.html#agricultural-inputs-design-features-of-the-reference-questionnaires"><i class="fa fa-check"></i><b>4.4</b> Agricultural Inputs: Design Features of the Reference Questionnaires</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html"><i class="fa fa-check"></i><b>5</b> Chapter 5: Livestock</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#measuring-stocks"><i class="fa fa-check"></i><b>5.1</b> Measuring Stocks</a></li>
+<li class="chapter" data-level="5.2" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#costs-of-production"><i class="fa fa-check"></i><b>5.2</b> Costs of Production</a></li>
+<li class="chapter" data-level="5.3" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#income-sources"><i class="fa fa-check"></i><b>5.3</b> Income sources</a></li>
+<li class="chapter" data-level="5.4" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#challenges-to-livestock-measurement"><i class="fa fa-check"></i><b>5.4</b> Challenges to Livestock Measurement</a></li>
+<li class="chapter" data-level="5.5" data-path="chapter-5-livestock.html"><a href="chapter-5-livestock.html#livestock-data-design-features-of-the-reference-questionnaires"><i class="fa fa-check"></i><b>5.5</b> Livestock Data: Design Features of the Reference Questionnaires</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html"><i class="fa fa-check"></i><b>6</b> Chapter 6: Field Implementation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#fieldwork-implementation-tradeoffs-and-survey-design-choices"><i class="fa fa-check"></i><b>6.1</b> Fieldwork Implementation Tradeoffs and Survey Design Choices</a></li>
+<li class="chapter" data-level="6.2" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#piloting-for-improved-survey-design"><i class="fa fa-check"></i><b>6.2</b> Piloting for Improved Survey Design</a></li>
+<li class="chapter" data-level="6.3" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#mode-of-data-collection"><i class="fa fa-check"></i><b>6.3</b> Mode of Data Collection</a></li>
+<li class="chapter" data-level="6.4" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#fieldwork-organization-and-logistics"><i class="fa fa-check"></i><b>6.4</b> Fieldwork Organization and Logistics</a></li>
+<li class="chapter" data-level="6.5" data-path="chapter-6-field-implementation.html"><a href="chapter-6-field-implementation.html#plot-visits-and-georeferencing"><i class="fa fa-check"></i><b>6.5</b> Plot Visits and Georeferencing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><i class="fa fa-check"></i><b>7</b> Chapter 7: Conclusions and Future Directions for Agricultural Survey Design</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html#data-integration"><i class="fa fa-check"></i><b>7.1</b> Data Integration</a></li>
+<li class="chapter" data-level="7.2" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html#measuring-theoretical-concepts-more-precisely"><i class="fa fa-check"></i><b>7.2</b> Measuring Theoretical Concepts More Precisely</a></li>
+<li class="chapter" data-level="7.3" data-path="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html"><a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html#open-measurement-questions-for-validation-research"><i class="fa fa-check"></i><b>7.3</b> Open Measurement Questions for Validation Research</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="appendix-i-agricultural-reference-questionnaire.html"><a href="appendix-i-agricultural-reference-questionnaire.html"><i class="fa fa-check"></i>Appendix I: Agricultural Reference Questionnaire</a></li>
+<li class="chapter" data-level="" data-path="appendix-ii-livestock-reference-questionnaire.html"><a href="appendix-ii-livestock-reference-questionnaire.html"><i class="fa fa-check"></i>Appendix II: Livestock Reference Questionnaire</a></li>
+<li class="chapter" data-level="" data-path="appendix-iii-glossary.html"><a href="appendix-iii-glossary.html"><i class="fa fa-check"></i>Appendix III: Glossary</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Agricultural Survey Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-6-field-implementation" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Chapter 6: Field Implementation</h1>
+<p>Agricultural surveys may be implemented to achieve various objectives, and these objectives ought to be considered when designing and fielding data collection efforts. NSOs, which are common implementing agencies for agricultural surveys, may seek to use agricultural surveys to produce estimates of crop production or monitor changes in agricultural production over time. These objectives will have implications on the survey design, as estimation of crop production may warrant a cross-sectional design with a larger sample in order to achieve estimates at the desired level of representativeness, while an objective of monitoring and understanding the dynamics of the agricultural sector warrants a panel approach. These objectives and the implications on survey design all need to be considered, while also balancing the often-binding resource constraints and wider mandate of the agency.</p>
+<p>This chapter discusses practical considerations for implementing agricultural surveys, with consideration for the primary objectives and constraints faced by implementing agencies, building on the experience of the LSMS-ISA. This chapter primarily focuses on implementation by or in collaboration with NSOs, but many of the principles and challenges of collaboration are instructive for other national collaborations designed to produce data. For information on household surveys costs conducted in partnership with NSOs around the globe, Kilic et al. (2017) summarizes costs and lessons learned from such collaborations.</p>
+<div id="fieldwork-implementation-tradeoffs-and-survey-design-choices" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Fieldwork Implementation Tradeoffs and Survey Design Choices</h2>
+<p>Survey fieldwork is a costly and complex operation. Here we discuss various design and implementation decisions that are to be considered in order to achieve the survey objectives while balancing data quality with resource constraints that are common to NSOs and other implementing agencies. These decision points, in which tradeoffs between data quality and implementation cost are present, include but are not limited to the following:</p>
+<ul>
+<li><p>Number of survey visits</p></li>
+<li><p>Sample size</p></li>
+<li><p>Question translation</p></li>
+<li><p>Integration of objective measures</p></li>
+<li><p>Survey content and questionnaire design</p></li>
+<li><p>Mode of data collection</p></li>
+<li><p>Enumerator recruitment, training, and supervision</p></li>
+</ul>
+<p>The reference questionnaire in Appendix I, as well as the discussion in previous chapters, promotes interviews being split up into two visits whereby households are visited once following planting and again following harvest. This approach is recommended as it shortens the recall period for planting activities and splits the respondent burden across multiple visits. However, the feasibility of this approach depends on two things: (i) the agricultural calendar of the given country, and (ii) the resource constraints and parallel survey operations of the implementing agency which may further strain resource availability. On the former, if a country has multiple cropping seasons per year, post-planting and post-harvest visits may not be realistic for every cropping season, and depending on the agricultural calendar, recall periods may be reduced in these multi-season years supporting a case for only a post-harvest visit for each season. Resource constraints in terms of funding and/or human resources may also prohibit the implementation of a two-visit survey structure, in which aggregation of data collection efforts into a single post-harvest visit would be the alternative. If resources allow, more frequent visits may be implemented to reduce recall bias.</p>
+<p>The objectives of the survey will also inform the sample size required. For operations aimed at highly precise production estimates representative of small administrative areas, a large sample size will likely be needed, depending on the number of key crops and heterogeneity of the sample areas. For example, Ethiopia’s 2015-16 Annual Agricultural Sample Survey included a sample of more than 44,000 households, while the LSMS-ISA supported Ethiopia Socioeconomic Survey panel in the same year was implemented on a sample of roughly 5,000 households.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Tradeoffs will be necessary between the detail of the survey instrument and the sample size in order to accommodate resource constraints of the implementing agency. The reference questionnaire provided in Appendix I, for example, includes highly detailed information on the drivers of production that may not be feasible/realistic for implementation in large sample sizes given the time it takes to administer such a survey.</p>
+<p>There is also a tradeoff between carefully worded questions and easily understandable questions. While survey designers may be inclined to phrase questions in a very precise manner to get at the exact data they are seeking, this specific phrasing may either be difficult to understand by respondents or lost in translation. Unless the questionnaire is originally designed in the language in which it will be administered, translation will be necessary to account for the language, terms, and concepts of the local context. Back translation, wherein the questionnaire is translated to the local language, and then back to the original language, is recommended to ensure proper translation. Piloting of the questionnaire will also serve to flag incorrect translations or context-specific concepts that are not appropriately reflected in the questionnaire.</p>
+<p>Significant tradeoffs exist around the measurement methods employed for specific topics. As discussed previously, systematic bias is evident in the respondent reporting of key agricultural variables such as land area and crop production. These biases can be mitigated by the integration of objective measures into survey operations. These objective, or pseudo-objective, measures may include the use of GPS for area measurement, crop-cutting for measurement of crop production, soil sampling for soil quality, etc. These measures have been shown to dramatically improve data quality, though they do come at a cost. Costs include the procurement of relevant equipment, training on the measures, and additional fieldwork time. The timing of visits should also be considered when determining which objective measures to integrate into a survey, as some are time sensitive and cannot be completed in a single-visit survey (such as crop cutting). Where integration of these measurements on the full sample is not possible due to resource constraints, a combination of sub-sampling for objective measurement and imputation techniques can be used to improve data quality across the sample with limited financial investment. Kilic et al. (2017), for example, illustrate how multiple imputation techniques can be used to impute improved measures of plot area for observations where GPS measurement was not conducted.</p>
+<p>A significant discussion with implementation partners is the survey content and questionnaire design choices which may increase field time and interview complexity. Our discussion throughout this volume was to document best practice where possible and provide questionnaire designers with information about survey design choices. We fully acknowledge that it may not be possible to implement best practice in each survey due to fieldwork constraints, budget or partner capacity, but these choices should be taken with as much information on tradeoffs as possible.</p>
+<p>The reference questionnaire discussed and appended to this document is designed to provide a detailed understanding of agricultural activities. The thoroughness of this questionnaire, however, may not be necessary or desired in contexts where agriculture makes up only a marginal share of the overall economy. In such cases where agriculture is not the focus of the survey or where it makes up a small share of household income, it is likely still necessary to collect some data on agriculture, if only to allow computation of total household incomes. The World Bank’s LSMS team has developed an agriculture questionnaire which is designed for these cases, including only the minimum set of agricultural data necessary for analyzing the role of farm activities in household livelihoods. This shortened agriculture questionnaire is provided along with a reference household questionnaire and related guidebook (Oseni et al., 2020).</p>
+<p>While the shortened version of the agriculture questionnaire includes crop, livestock, fishing, and forestry production, it of course comes with tradeoffs in topical coverage and level of detail. Data on crop production is collected at the parcel level, rather than at the plot level, which shortens the questionnaire but eliminates the ability to conduct plot-level productivity analysis. By aggregating to the parcel level, the concept of the plot manager, which is often used to conduct gender-related analysis, is also omitted. Details on non-labor inputs are also significantly minimized, with binary questions asked on fertilizer use rather than quantity of inputs applied, for example. No information is collected on crop processing or extension services in the shorter module. Additionally, the shortened questionnaire is designed to be implemented in a single visit, in conjunction with the household survey, rather than split into post-planting and post-harvest visits.</p>
+<p>The tradeoffs around mode of data collection and enumerators are discussed separately in the subsequent sections.</p>
+</div>
+<div id="piloting-for-improved-survey-design" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Piloting for Improved Survey Design</h2>
+<p>Piloting surveys in the field before implementation is an important tool to assess survey design choices. We highlight the benefits of piloting particularly when a literature on a survey design choice is thin. Incorporating methodological experiments into the pilot phase of a project is an approach to maximize the benefit of field research for projects who have already budgeted for piloting. If survey design effects are large enough to potentially bias estimates, low cost methodological experiments should be able to detect survey design biases in relatively small sized experiments.</p>
+<p>While integrating methodological experiments into piloting provides a direct estimate of biases in survey design choices, piloting can take many forms with informative results for survey design. Piloting even with a few respondents allows survey designers and national collaborators to assess a survey instrument’s ease of implementation in the field, provide a method to evaluate interviewer’s understanding of the questionnaire, and identify areas of questionnaire design improvement. Field protocols can be tested during pilots and a survey’s approximate duration can be estimated. During piloting, it is good to evaluate survey duration using the pilot survey duration as an upper bound on survey duration during the whole of fieldwork as interviewers will become more efficient with more questionnaire experience.</p>
+<p>Collaborations with national partners are enhanced by integrating survey designers with national stakeholders in the piloting process. National experts in complementary disciplines can also provide insights to better design surveys tailored to respondent thinking about variables of interest for researchers. Field partner collaboration extends beyond soliciting accurate response categories for questions and into how variations in production systems within countries are best represented clearly for respondents and translated into an agricultural questionnaire design. Question phrasing that better reflects cultural context will be easier for respondents to understand and accurately report their responses.</p>
+</div>
+<div id="mode-of-data-collection" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Mode of Data Collection</h2>
+<p>Agricultural survey data can be collected through paper-based questionnaires (“paper assisted personal interviewing” or PAPI) or tablet- or computer-based questionnaires (“computer assisted personal interviewing” or CAPI). Historically, PAPI has been the method of choice, largely for lack of alternative options. However, CAPI technologies have evolved and are now widely adopted. At the time of writing, all LSMS-ISA surveys have migrated from PAPI to CAPI implementation, using the World Bank’s Survey Solutions CAPI software. Both modes of data collection come with pros and cons, though CAPI implementation is strongly recommended. PAPI implementation offers the advantage of relatively less upfront preparation time prior to fieldwork but requires significant effort in the data entry stage. In the case of PAPI implementation, it is recommended that a double-data entry approach be used in order to limit the influence of entry errors. Data entry, which can be done concurrently in the field by a designated data entry operator or at a centralized location, comes at a cost in terms of personnel and time required for data dissemination. Data quality controls in PAPI are also rather limited relative to CAPI operations. In PAPI, supervisors often review the paper questionnaire at the close of each day. If errors are found, this generally requires a re-visit to the household in order to confirm or rectify the relevant responses.</p>
+<p>CAPI-based data collection benefits from real-time data quality controls as well as trackable revisions and supervisor review. Research from various threads of development economics have cited a reduction in errors as a result of the use of CAPI implementation, for example the Asian Development Bank (2019) on labor force data and agricultural household survey data, Fafchamps et al. (2012) on microenterprise profit data, and Caeyers et al. (2012) on consumption data. Errors that are caught in real-time, through warning messages for pre-coded errors, prompt the enumerator to confirm or correct relevant inputs at the moment the question is asked, thereby increasing data quality and limiting the need to revisit the household. Data quality can be increased at the micro level, but also at the macro level through various survey management tools that allow office-based personnel to effectively monitor operations and data quality in real time. With relatively minimal investment, survey management tables and graphics can also be automated through application programming interfaces (APIs). An additional advantage of CAPI is the possibility of developing and administering interviews in different languages, allowing interviewers to toggle between different languages as necessary to accommodate respondents. Implementation via CAPI requires additional preparation time in order to test the application and program error checks, but it can significantly decrease the time from the close of fieldwork to data dissemination as data entry is not needed and data quality controls can be implemented continuously throughout fieldwork. Numerous open-source and private CAPI software options exist, common platforms include the World Bank’s Survey Solutions software, SurveyCTO, Open Data Kit (ODK), CSPro and SurveyBee. The questionnaires found in Appendix I and II are also publicly available in Survey Solutions.</p>
+<p>With the rate of mobile phone ownership growing globally, the potential for phone-based or phone-assisted surveys increases. While national-scale agricultural data collection through phone surveys has yet to be implemented, recent methodological research on the topic has shown promise for improving data quality in some areas, while the flurry of phone surveys implemented in the face of the COVID-19 pandemic shows promise for feasibility of implementation. Methodological research on agricultural labor data collection in Tanzania, for example, shows consistent data collected through weekly in-person visits, considered to be the gold standard, and weekly phone calls, suggesting that phone surveys could be a reasonable alternative (Arthi et al., 2018). Implementation of surveys via mobile phone will necessitate simplification of the questionnaire instrument and careful assessment of mobile phone coverage in the population of interest. Further research is needed in order to fully understand the risks and challenges of phone-based national-level agricultural survey data collection.</p>
+</div>
+<div id="fieldwork-organization-and-logistics" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Fieldwork Organization and Logistics</h2>
+<p>Several features of fieldwork organization and logistics can impact data quality outcomes, including the composition, training, and structure of fieldwork teams. Fieldwork organization should include a supervisory hierarchy, with several field teams deployed, each including a set of enumerators and a supervisor, and a separate headquarters-based supervisory team which conducts periodic field supervision and continuous data review. Where a panel approach is employed, a specialized tracking team can be deployed with the objective of tracking and interviewing respondents that have relocated between survey rounds and/or split off from previous households and created new <em>split-off</em> households.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> In designing fieldwork structure, enumerators may be mobile (moving with teams from enumeration area to enumeration area) or resident (permanently residing in or close to the enumeration area for which s/he is responsible). The survey-structure and objectives of the survey should help to inform the fieldwork structure. Where multiple visits are necessary, such as when crop-cutting is to be implemented, resident enumerators may be more cost-efficient and effective.</p>
+<p>At the base of the data generating process is the enumerator who manages the collection of data from respondents. A meta-analysis of the literature<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> establishes that enumerator behavioral traits and demographic characteristics influence survey responses and by extension data quality. Response rates and response biases are particularly influenced by specific enumerator characteristics (age, sex, ethnicity, experience, education, etc.), behaviors (formal versus conversational interview style), cognitive and non-cognitive skills (such as mathematical ability, reading, attention to detail, and empathy) and interviewer experience<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a><sup>,</sup><a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a><sup>,</sup><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>. Recent research on enumerator effects by Di Maio and Fiala (2019), through a randomized experiment in Uganda, illustrate that enumerator characteristics and their differences from respondent characteristics affect survey responses and ultimately data quality, especially related to sensitive political topics. Responses in less sensitive topics were much less, or not at all, sensitive to enumerator characteristics. This is supported by additional research which suggests that salience and sensitivity of the questions at hand influence the nature and magnitude of enumerator effects (for example, Himelein, 2016; Laajaj and Macours, 2017). Beaman et al. (2018) find referral-based recruitment may disadvantage women in an enumerator recruitment experiment in Malawi. Marx et al. (2018) provide evidence on team composition and ethnic diversity on enumerator performance. Data on time use of field teams suggests horizontally homogenous teams (enumerator teams) organized tasks more efficiently, while vertically homogenous teams (supervisors, enumerators, data monitors) had lower effort. Additional research is needed to gauge the sensitivity of agricultural data specifically to enumerator characteristics.</p>
+<p>The capacity of enumerators should also be carefully assessed to ensure they possess the skills needed for the specific survey operation, with an eye for the data collection mode being employed. Some literature exists to suggest that enumerator recruitment and contract structure affect data quality and enumerator job performance. For agricultural surveys, knowledge of farming may prove to be an asset in terms of both understanding the questionnaire content and establishing rapport with respondents. This should be weighed against enumerator education, language skills, and familiarity with technological tools (in the case of CAPI implementation).</p>
+<p>Effective survey implementation relies on a homogenous, thorough understanding of the questionnaire content and concepts. Training of field teams, as well as those involved in survey management at the headquarters level, is essential in developing this thorough understanding. Depending on the number of people involved and the structure of the NSO or other implementing agency, training can be conducted in a single centralized location or in several parallel decentralized training locations. Centralized trainings benefit from consistent messaging for all trainees, though may be ineffective if there is a large number of trainees. Decentralized trainings are often necessitated by large groups of trainees and/or decentralized statistical offices, though they come with the complication of ensuring discussions and questionnaire revisions are communicated across locations. Irrespective of the number of training locations, a training should be held prior to each survey visit (one training for the post-planting visit and one for the post-harvest visit, in the case of a two-visit survey). Prior to each training, a “training of trainers” is commonly held, especially in the case of decentralized trainings, in order to train the facilitators of the field team trainings and ensure the implementation and concepts are clear and harmonized prior to the full training. Training of trainers, and potentially fieldwork trainings, could also be held virtually in-part, if the context allows.</p>
+<p>Fieldwork training should be inclusive of all facets of fieldwork, from protocols on conduct with respondents to questionnaire content to data review, revision, and submission. This generally requires both classroom-style training on relevant concepts, questionnaire content and layout, and CAPI software, if applicable. Classroom instruction should be complemented by mock interviews, both amongst the enumerators themselves and with pilot households, and training on objective measures that are being integrated into the survey. For example, training on the use of GPS devices for area measurement requires theoretical training in the classroom followed by repeated practice outside the classroom.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> While the integration of objective measures is intended to reduce subjectivity in responses, training is still required to realize their maximum benefit.</p>
+<p>Finally, enumerator activities should continue to be monitored throughout fieldwork. Supervision is particularly important at the onset of fieldwork, to identify and correct any misunderstandings, but is relevant for the full duration. Incoming data should be monitored both by supervisors in the field and the survey management team at the headquarters level, made quicker and more automated through the use of various CAPI tools. Additionally, supervisors from both the field and headquarters should conduct random spot checks or call backs to households to confirm data entered by enumerators matches that reported by the household.</p>
+</div>
+<div id="plot-visits-and-georeferencing" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Plot Visits and Georeferencing</h2>
+<p>An additional layer of consideration for the design and implementation of an agricultural survey is whether visitation to agricultural plots (or parcels) will be carried out. Visitation of agricultural plots, whereby an enumerator physically travels to plots typically with a member of the sampled household or farm, enables a wide range of additional survey operations and objective measures. Crop-cutting, which has been shown to significantly reduce measurement error in agricultural production estimates, as discussed in Chapter 3, for example, requires at least two visits to the selected plots (after planting and at time of harvest). Objective measures of agricultural land area, also discussed in Chapter 3, require physical presence on the land.</p>
+<p>In addition to the benefits of potential objective measurements, visitation of agricultural plots allows for the <em>georeferencing</em> of plots (the collection of GPS coordinates of the plots and/or the identification of the boundaries of the plots), which can add significant value through the integration with other geospatial and remotely-sensed data sources such as data on soil properties, forest coverage, climate, and water quality, among many others. Integration of these properties with data on farming practices and outcomes can provide more complete insights into the agricultural landscape and barriers to increased productivity.</p>
+<p>Integration of agricultural survey data with various types of spatial and Earth observation data, possible with the georeferencing of plots, has expanded the scope of analysis possible with the use of survey data, while also improving the performance prediction algorithms employed in spatial analyses. In recent years there has been growing demand for crop yield estimation via remotely sensed imagery, for example, for more frequent and rapid assessment of production estimates when agricultural surveys or censuses are not available. Recent research has cited improvements in yield estimation when estimation algorithms are calibrated on ground-based crop-cutting data collected though agricultural surveys. Lobell et al. (2019) find that calibration based on crop-cutting data from Uganda significantly limited the overestimation bias observed in the uncalibrated model of maize yields. Related research by Lobell et al. (2020) highlight the possibility of sub-sampling of crop-cutting-based production measurement, whereby only a strategically selected subsample of plots are subject to crop-cutting rather than the full sample, could be sufficient to calibrate satellite-based estimation models. This would greatly improve the feasibility of scale-up in national survey operations.</p>
+<p>While georeferencing of agricultural plots is strongly recommended when feasible, considerations need to be made to protect the confidentiality of survey respondents. GPS coordinates should not be disseminated to the public without an anonymization procedure.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> Anonymization, or <em>offsetting</em>, of GPS coordinates will reduce the precision of the coordinates and therefore limit the value of integrated data sources through loss of variation at the local level. With raw GPS coordinates one is able to extract climate or soil conditions for that particular point, for example, whereas offset coordinates are commonly provided at the enumeration area level and thus the data extracted from geospatial data will be the same across the enumeration area. To maximize the value of integration with geospatial data sources while preserving respondent confidentiality, the LSMS-ISA prepares and disseminates a set of <em>geovariables</em> that are derived from the raw GPS coordinates, but does not release the raw coordinates themselves. Additional research is ongoing with respect to further ways of maximizing the use of georeferenced data while maintaining confidentiality. An active literature on creating synthetic data from confidential data may provide some insights to data integration challenges (see for example, Abowd and Schmutte 2019).</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>Sample size of the 2015-16 Annual Agricultural Survey extracted from the CSA’s Report on Area and Production of Major Crops, available <a href="http://www.csa.gov.et/survey-report/category/347-eth-agss-2016">here</a>. Sample size for the Ethiopia Socioeconomic Survey extracted from the World Bank’s Microdata Catalog <a href="https://microdata.worldbank.org/index.php/catalog/2783">here</a>.<a href="chapter-6-field-implementation.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Tracking protocols for the LSMS-ISA surveys are available as part of the documentation released with the survey data. Visit the World Bank’s Microdata Library (<a href="https://microdata.worldbank.org/" class="uri">https://microdata.worldbank.org/</a>) to find all of the LSMS-ISA surveys. The tracking forms and protocols (included in the enumerator’s manual) for the Malawi Integrated Household Panel Survey, for example, are available here: <a href="https://microdata.worldbank.org/index.php/catalog/2939/related-materials" class="uri">https://microdata.worldbank.org/index.php/catalog/2939/related-materials</a><a href="chapter-6-field-implementation.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>West, B.T. and Blom, A.G., 2017. Explaining interviewer effects: A research synthesis. Journal of Survey Statistics and Methodology, 5(2), pp.175-211.<a href="chapter-6-field-implementation.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>Cannell, C. F., and Laurent. (1977). A summary of studies of interviewing methodology. Vital and Health Statistics: Series 2, Data Evaluation and Methods Research (No. 69. DHEW Publication No. (HRA), 77-1343). Washington, DC: U.S. Government Printing Office.<a href="chapter-6-field-implementation.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>Fowler, F. J. Jr., and Mangione, T. W. (1985). The value of interviewer training and supervision (Final report to the National Center for Health services Research). Boston, MA: Center for Survey Research.<a href="chapter-6-field-implementation.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>Alcser K., Clemens J., Holland L., Guyer H., Hu M. 2016. Interviewer recruitment, selection, and training. Cross-Cultural Survey Guidelines. University of Michigan.<a href="chapter-6-field-implementation.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>For guidance on the implementation of GPS for area measurement, see the LSMS guidebook on Land Area Measurement in Household Surveys (Carletto et al., 2016).<a href="chapter-6-field-implementation.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>An example of a GPS anonymization protocol employed by the DHS program can be found <a href="https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm">here</a>.<a href="chapter-6-field-implementation.html#fnref15" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-5-livestock.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-7-conclusions-and-future-directions-for-agricultural-survey-design.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["create_bookdown.pdf", "create_bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

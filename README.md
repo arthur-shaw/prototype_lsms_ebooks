@@ -1,0 +1,7 @@
+This project consists of several linked sub-projects:
+
+- **Convert a Word document to Markdown.** The objective is to create the inputs necessary for {bookdown} and {pagedown}. To convert from Word to Markdown, this sub-project uses RMarkdown's interface with with Pandoc. To modify the raw Markdown document, this sub-project reads the Markdown document into R and performs textual transformations (e.g., changing h2 headings to h1, removing problematic content, etc.). Currently, this sub-project also creates inputs for the other two sub-projects. For {bookdown}, it transforms each book chapter into a separate file. For {pagedown}, it simply copies the modified Markdown file to the that sub-project's folder.
+- **Create a {bookdown} document.** Currently, this sub-project is manually executed. At the outset, I create a {bookdown} project, complete with boilerplate files and default parameters. Then, I modify the parameters in files that contain YAML. Next, I delete all of the Mardown files. Then, I copy all of the chapter files from the prior sub-project. Next, I create a {bookdown} document. Then, I make some ad-hoc changes (e.g. delete orphan headers).
+- **Convert from Markdown to {pagedown}.** First, I create the necessary RMarkdown file using `ymlthis` to write the YAML and to create the file itself. Next, I make some ad-hoc changes to the content.
+
+The status of the project is captured on [this Trello board](https://trello.com/b/GTcFlIEp/prototyping-lsms-ebook).

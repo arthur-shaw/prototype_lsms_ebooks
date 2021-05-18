@@ -1,0 +1,37 @@
+--- 
+title: "Agricultural Survey Design"
+subtitle: "Lessons from the LSMS-ISA and Beyond"
+author: "Andrew Dillon, Gero Carletto, Sydney Gourlay, Philip Wollburg, Alberto Zezza"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+description: "It is the purpose of this volume to aggregate innovations in agricultural survey design from the experience of the Living Standards Measurement Study - Integrated Surveys on Agriculture (LSMS-ISA), academia, and other survey operations to provide recommendations for researchers, survey practitioners and policy analysts on lessons learned in survey design, while also highlighting topics for which more research is required to provide a conclusive survey design recommendation. From these agricultural survey design 'lessons learned', we highlight tradeoffs between household survey design choices, measurement error and data use."
+---
+
+# Acknowledgments {-}
+
+The authors are grateful to Didier Yelognisse Alia, Leigh Anderson, and Paul Winters for their valuable peer review of this document, as well as the continued efforts and dedication of the NSOs involved in the Living Standards Measurement Study -- Integrated Surveys on Agriculture program. Much of the research and fieldwork underpinning this document was made possible thanks to the generous financial contributions of the Bill and Melinda Gates Foundation, the United Kingdom's Foreign, Commonwealth & Development Office (formerly FDID), and the United States Agency for International Development.
+
+# Acronyms and Abbreviations {-}
+
+APIs Application programming interfaces
+
+CAPI Computer assisted personal interviewing
+
+CR Compass and rope
+
+CSPro The Census and Survey Processing System
+
+GPS Global Positioning System
+
+ICLS International Conference of Labour Statisticians
+
+LSMS-ISA Living Standards Measurement Study - Integrated Surveys on Agriculture
+
+NGO Non-governmental organization
+
+NSO National Statistical Office
+
+ODK Open Data Kit
+
+PAPI Paper assisted personal interviewing
