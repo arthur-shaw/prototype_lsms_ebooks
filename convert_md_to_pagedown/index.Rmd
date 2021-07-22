@@ -180,7 +180,90 @@ In summary, the key innovation in conducting plot-level production analysis is n
 
 Table 2. Survey Decisions that Inform Production Measurement
 
-PLACEHOLDER FOR TABLE 2
+```{r table2, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+# load necessary libraries
+library(officer)
+library(tidyr)
+library(dplyr)
+library(flextable)
+
+# input folder
+input_dir <- "C:/Users/wb393438/LSMS-general/guidebook_formats/prototype_lsms_ebooks/handle_tables/inputs/"
+ag_doc <- "Agricultural Survey Design_5_5.docx"
+
+# create docx object
+ag_survey_design <- read_docx(path = paste0(input_dir, ag_doc))
+# create summary
+ag_summary <- docx_summary(ag_survey_design)
+
+# prepare table data
+table2_df <- dplyr::filter(ag_summary, doc_index == 150) %>%
+    # convert from long to wide, bringing content into columns
+    tidyr::pivot_wider(
+        names_from = cell_id, 
+        names_prefix = "col_", 
+        values_from = text, 
+        id_cols = row_id
+    ) %>%
+    select(-row_id)
+
+# compose a display table from table data
+table2_tbl <- flextable::flextable(data = table2_df) %>% 
+    # delete header
+    delete_part(part = "header") %>%
+    # inner and outer borders
+    border_outer() %>% 
+    border_inner() %>% 
+    # post-harvest heading
+    flextable::merge_at(i = 1, j = c(1, 2, 3)) %>% 
+    align(i = 1, j = 1, align = 'center') %>% 
+    bold(i = 1, j = c(1, 2, 3)) %>% 
+    italic(i = 1, j = c(1, 2, 3)) %>% 
+    # column labels
+    bold(i = 2, j = c(1, 2, 3)) %>% 
+    # PP 1 - Parcel Roster
+    merge_at(i = c(3, 4), j = 1) %>% 
+    valign(i = c(3, 4), j = 1) %>% 
+    # PP 2 - Parcel Details
+    merge_at(i = c(5, 6), j = 1) %>% 
+    valign(i = c(5, 6), j = 1) %>% 
+    # PP 3 - Plot Roster
+    merge_at(i = c(7:9), j = 1) %>% 
+    valign(i = c(7:9), j = 1) %>% 
+    # PP 4 - Plot Details
+    merge_at(i = c(10:11), j = 1) %>% 
+    valign(i = c(10:11), j = 1) %>% 
+    # PP 6 - Crop Roster
+    merge_at(i = c(12:15), j = 1) %>% 
+    valign(i = c(12:15), j = 1) %>%
+    # Post-Harvest Questionnaire heading
+    flextable::merge_at(i = 16, j = c(1, 2, 3)) %>% 
+    align(i = 16, j = 1, align = 'center') %>% 
+    bold(i = 16, j = c(1, 2, 3)) %>% 
+    italic(i = 16, j = c(1, 2, 3)) %>%
+    # column labels
+    bold(i = 17, j = c(1, 2, 3)) %>% 
+    # PH 7 - Field Crop Production
+    merge_at(i = c(18:21), j = 1) %>% 
+    valign(i = c(18:21), j = 1) %>% 
+    # PH 8 - Field Crop Disposition
+    merge_at(i = c(22:26), j = 1) %>% 
+    valign(i = c(22:26), j = 1) %>%
+    # bold first column
+    bold(j = 1) %>%
+    # expand third column
+    width(j = 3, width = 3)
+
+table2_tbl
+
+# flextable::save_as_image(
+#   x = table2_tbl,
+#   path = "assets/table2.png",
+#   webshot = "webshot2"
+# )
+
+
+```
 
 ## Land Measurement
 
@@ -746,75 +829,37 @@ Refer to attachment which is extracted from Zezza et al. (2016b).
 []{#_Toc70494920 .anchor}
 
 # Appendix III: Glossary {-}
+```{r, echo= FALSE, warning=FALSE, error=FALSE, message=FALSE}
+table_iii_df <- dplyr::filter(ag_summary, doc_index == 495) %>%
+    # convert from long to wide, bringing content into columns
+    tidyr::pivot_wider(
+        names_from = cell_id, 
+        names_prefix = "col_", 
+        values_from = text, 
+        id_cols = row_id
+    ) %>%
+    select(-row_id) %>%
+    slice(-1) %>%
+    rename(
+        Term = col_1,
+        Description = col_2
+    )
 
-  **Term**                                         **Description**
-  ------------------------------------------------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Administrative data                              Â Data generated as a by-product of registration and other administrative and service delivery functions of government entities or other organizations. Examples include registries of large farms or information collected through agricultural extension services.
-  Agricultural season                              Â Agricultural season refers to the portion of a year in which seasonal crops are typically grown in a given locale. This is dictated by local climatic conditions. In agricultural survey instruments, the 'reference agricultural season' is used to demarcate and refer to the production cycle of interest.
-  Agro-forestry                                    Â Land use system in which trees or shrubs are deliberately grown on a plot of land together with crops and animals.
-  Area sampling                                    Sampling method used when no complete sampling frame is available, based on dividing the land area under study into smaller areas and sampling from the list of those smaller areas.
-  Attrition                                        Â In longitudinal surveys, attrition refers to the loss of survey participants (households, holdings, individuals) over time, with each subsequent round of the survey.
-  Bias                                             Â In statistics, an estimator is biased when its expected value differs from the true value of the underlying parameter.
-  Census                                           Â The full enumeration or count of an entire population of interest, such as farms or agricultural holdings (agricultural census) or households (population and housing census).
-  Compass and rope                                 Â A method to measure the area of a unit of land reliably using poles, robes, compasses.
-  Computer Assisted Personal Interviewing (CAPI)   A survey mode in which the survey questionnaire is pre-programmed on a tablet or computer and administered to the respondent in person by an interviewer.
-  Consumption aggregate                            Total value of items consumed by the household over a given reference period, common welfare metric used widely to determine whether a household is considered poor.
-  Crop cutting                                     Crop cutting is a more objective measurement method for crop production than farmer recall, considered the gold standard for measuring crop production and yields. Randomly located subplots within a given plots are harvested and weighted before and after drying.
-  Crop rotation                                    Farming method whereby crops on a plot are grown one after the other with the aim of maintaining fertile soil on the plot.
-  Crop Yield                                       Quantity of crop obtained per unit of land area used.
-  Data collection mode                             Â Data collection mode or survey mode is the method used to collect the data. Examples include face-to-face, telephone, mail, and web-based surveys.
-  Enumerator                                       Interviewer in surveys.
-  External validity                                Â Extent to which results from a study or experiment can be generalized beyond its original context.
-  Geospatial data                                  Data related by geographic location, such as maps, satellite or remote sensing data.
-  Gold standard                                    Â In survey design, a method for collecting data on a given parameter that is regarded as yielding highly reliable data.
-  Head of the household                            Â Individual household member who is (considered by other household members) the main decision maker in a given household.
-  Holding                                          Economic unit of agricultural production under single management, comprising all livestock kept and all land used wholly or partly for agricultural production purposes, without regard to title, legal form, or size (FAO, WCA 2020).
-  Household                                        A household usually refers to a group of individuals who eat meals together and live in the same dwelling. In addition, according to the production-based definition of the household, it consists of adult individuals co-mingle revenues from agricultural production and non-farm enterprise for consumption. The production-based definition is used less frequently.
-  Household member                                 Â Individual who is a member of a given household.
-  Intercropping                                    Cultivation of more than one temporary and/or permanent crop simultaneously on the same plot.
-  Internal validity                                Â Extent to which a causal effect is soundly identified in a study or experiment.
-  Land tenure                                      Land tenure defines the property and use rights of an individual or group with respect to land.
-  Longitudinal survey                              Â A panel or longitudinal survey is a survey in which the same survey units (households, holdings, individuals) are re-visited for at least one round after the baseline survey round.
-  Measurement error                                Â Deviation of a measured value of a parameter from its true value.
-  Multi-topic household survey                     Sample survey with the household as its main unit of analysis and that studies multiple issues affecting the household, such as education, employment, poverty, migration, among others.
-  National Statistical Office (NSO)                Government agency in charge of producing official statistics.
-  Nonresponse                                      Â In surveys, nonresponse refers to selected respondents altogether failing to participate in the survey (unit nonresponse) or failing to respond to certain questions of the survey (item nonresponse).
-  Non-sampling error                               Survey error not due to sampling, such as response errors, when survey respondents misreport on survey questions for example because survey questions are poorly framed, or errors resulting from nonresponse.
-  Panel survey                                     Â A panel or longitudinal survey is a survey in which the same survey units (households, holdings, individuals) are re-visited for at least one round after the baseline survey round.
-  Paper Assisted Personal interviewing (PAPI)      Survey interview mode whereby the enumerator uses pen and paper to fill the questionnaire.
-  Parcel                                           Â A parcel is a piece of land of one land tenure type entirely surrounded by other land, water, road, forest or other features not forming part of the holding, or forming part of the holding under a different land tenure type. A parcel may comprise one or more plots.
-  Pastoralism                                      Livestock production system involving the grazing of livestock herds on rangelands and large pastures typically practiced by nomadic people who move with their herds.
-  Permanent crops                                  Crops with a growing cycle of more than one year (FAO, WCA 2020), and which do not need to be replanted after one growing cycle. Also referred to as *perennial crops*.
-  Plot                                             Â A plot is defined as a continuous piece of land on which a specific crop or a mixture of crops is grown, or which is fallow or waiting to be planted.
-  Plot manager                                     TheÂ manager of an agricultural plot is typically the main decision maker regarding crops planted, inputs applied, and output harvested.
-  Post-harvest questionnaire                       Â Questionnaire administered during the post-harvest visit of the survey, that is, a survey visit taking place after the farm's main harvest of temporary/seasonal crops has been completed.
-  Post-planting questionnaire                      Â Questionnaire administered during the post-planting visit of the survey, that is a survey visit taking place after the farm has completed the planting period of its main temporary/seasonal crops.
-  Productivity                                     Â In this volume, productivity refers to agricultural productivity, whether yield (output per area of land), labor productivity (output per unit of labor or per worker), or total factor productivity, taking into account all inputs and outputs.
-  Proxy response                                   In proxy response, an individual responds on behalf another individual, rather than all individuals responding directly for themselves.
-  Randomized controlled trial                      Scientific experiment to test the causal effect of a treatment or an intervention while controlling for confounding factors through experimental design.
-  Recall                                           Recall refers to the process of respondents self-reporting of past events of interest.
-  Recall period                                    Length of the period between the interview and an event the respondent is requested to recall.
-  Reference period                                 The period of reference for a survey question, for example, the reference agricultural season or the last 7 days.
-  Representativeness                               Â A sample is representative if it accurately reflects the study population of interest with respect to a set of predefined characteristics.
-  Research design                                  Methods, techniques, and strategies chosen to answer a given research question.
-  Root crops                                       Â Root crops or root vegetables are those crops whose roots are meant for consumption, such as cassava or onions.
-  Sample survey                                    Survey based on a sample of the entire population of interest, rather than full enumeration, usually designed to be representative of the population of interest.
-  Sampling                                         Selecting a predetermined number of units from a population of interest, such as farms or households.
-  Sampling error                                   Deviation of sample means from true population means leading to reduced representativeness of the sample.
-  Sampling frame                                   Â A list of units, such as farms, from which a survey sample is drawn.
-  Sex-disaggregated data                           Data that allows distinguishing between women and men at the level of the individual.
-  Skip sequences/patterns                          In survey questionnaires, a skip pattern routes the respondent to a specific question based on his or her answer to a previous question.
-  Smallholder                                      Â A smallholder or smallholder farmer is a person who owns and/or operates a small-scale agricultural holding, whether defined by land area, production volume, production technology, or other factors.
-  Social desirability bias                         Â Social desirability bias refers to a response bias whereby survey respondents answer survey questions in a way they perceive as pleasing the interviewer.
-  Survey design                                    Methods and techniques for developing and implementing a survey.
-  Survey experiment                                Scientific experiment to test the impact of survey design on measurement through surveys.
-  Survey methodology                               The study of survey methods.
-  Survey respondent                                Individual who respondents to survey questions.
-  Temporary crops                                  Crops with at least one growing cycle (planting and harvesting) per agricultural year, often once per reference agricultural season.
-  Total survey error                               Â The sum of all errors from design, implementation, data processing and analysis of surveys.
-  Tropical livestock units                         A standardized unit for measuring the stock of live animals independent of their breed or size.
-  Unit of analysis                                 The unit of analysis or unit of observation is the unit of interest of a study or survey, such as farms, individuals, households, or enterprises. The unit of analysis may vary in one survey or study.
-  Welfare                                          Â Measure of material wellbeing.
+table_iii_tbl <- flextable::flextable(data = table_iii_df) %>%
+    theme_zebra(
+        odd_body = "#E7CBBF"
+    ) %>%
+    theme_zebra(
+        odd_body = "#E7CBBF"
+    ) %>% 
+    bg(
+      bg = "#B1422F", 
+      part = 'header'
+    ) %>%
+    width(width = 2)
+
+table_iii_tbl
+```
 
 [^1]: For a deeper discussion of the evolution of methods and measurement in agricultural economics, see Fox (1986) and Herberich et al. (2009).
 

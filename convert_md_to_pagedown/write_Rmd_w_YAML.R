@@ -14,8 +14,14 @@ my_yaml <- ymlthis::yml() %>%
     ymlthis::yml_title("Agricultural Survey Design") %>%
     ymlthis::yml_subtitle("Lessons from the LSMS-ISA and Beyond") %>%
     ymlthis::yml_author(
-        name = c("Andrew Dillon","Gero Carletto","Sydney Gourlay","Philip Wollburg","Alberto Zezza"),
-        affiliation = c("Michigan State University", "World Bank", "World Bank", "World Bank", "World Bank")
+        name = c(
+            "Andrew Dillon","Gero Carletto","Sydney Gourlay","Philip Wollburg",
+            "Alberto Zezza"
+        ),
+        affiliation = c(
+            "Michigan State University", "World Bank", "World Bank", 
+            "World Bank", "World Bank"
+        )
     ) %>%
     ymlthis::yml_pagedown_opts(
         toc_title = "Table of Contents",
