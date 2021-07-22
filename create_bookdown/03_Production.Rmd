@@ -8,63 +8,83 @@ Choosing to measure production at the plot level requires a wider series of choi
 
 In summary, the key innovation in conducting plot-level production analysis is not to simply measure inputs and outputs at the plot level, but to distinguish the unit of analysis as plot-crop-season-manager. This unit of analysis facilitates comprehensive measurement of household production, allowing multiple analytical strategies from seasonal, crop and gender perspectives, but also has some limitations particularly in the context of a panel survey. Tracking plots is difficult between survey years which is one of the reasons that the LSMS-ISA surveys are conducted as a household panel (or household-parcel panel in select countries) with repeated cross-sections of plot, production, and input information. Another difficulty is related to plot characteristics that are relatively time-invariant within the survey period (such as soil characteristics, water source, plot topography) and time-varying characteristics (including labor, inputs, and capital utilization). We devote the next two chapters to the measurement of these time-invariant and time-variant characteristics but note that allocating these inputs and labor to the plot-crop-season-manager unit is often challenging.
 
-[]{#_Toc70494951 .anchor}Table 2. Survey Decisions that Inform Production Measurement
+```{r table2, echo=FALSE, message=FALSE, warning=FALSE}
+# load necessary libraries
+library(officer)
+library(tidyr)
+library(dplyr)
+library(flextable)
 
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Post-Planting Questionnaire***                                                                                            
-  ----------------------------------- ---------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Questionnaire module**            **Key design choice**                                                                    **Motivation/Considerations**
+# input folder
+input_dir <- "C:/Users/wb393438/LSMS-general/guidebook_formats/prototype_lsms_ebooks/handle_tables/inputs/"
+ag_doc <- "Agricultural Survey Design_5_5.docx"
 
-  **PP 1 - Parcel Roster**            Land area measurement with GPS                                                           Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of parcels for which the GPS area has not been measured.
+# create docx object
+ag_survey_design <- read_docx(path = paste0(input_dir, ag_doc))
+# create summary
+ag_summary <- docx_summary(ag_survey_design)
 
-                                      Non-standard units of measurement for farmer self-reported land area.                    Reporting in standard units (square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.
+# prepare table data
+table2_df <- dplyr::filter(ag_summary, doc_index == 150) %>%
+    # convert from long to wide, bringing content into columns
+    tidyr::pivot_wider(
+        names_from = cell_id, 
+        names_prefix = "col_", 
+        values_from = text, 
+        id_cols = row_id
+    ) %>%
+    select(-row_id)
 
-  **PP 2 - Parcel Details**           Individual-level ownership determined                                                    Asset ownership, particularly of land in agrarian settings, is a critical factor of individual wealth and security. Individual-level ownership of land allows for gender-based analysis and monitoring of select SDG Indicators when coupled with other questions on land.
+# compose a display table from table data
+table2_tbl <- flextable::flextable(data = table2_df) %>% 
+    # delete header
+    delete_part(part = "header") %>%
+    # inner and outer borders
+    border_outer() %>% 
+    border_inner() %>% 
+    # post-harvest heading
+    flextable::merge_at(i = 1, j = c(1, 2, 3)) %>% 
+    align(i = 1, j = 1, align = 'center') %>% 
+    bold(i = 1, j = c(1, 2, 3)) %>% 
+    italic(i = 1, j = c(1, 2, 3)) %>% 
+    # column labels
+    bold(i = 2, j = c(1, 2, 3)) %>% 
+    # PP 1 - Parcel Roster
+    merge_at(i = c(3, 4), j = 1) %>% 
+    valign(i = c(3, 4), j = 1) %>% 
+    # PP 2 - Parcel Details
+    merge_at(i = c(5, 6), j = 1) %>% 
+    valign(i = c(5, 6), j = 1) %>% 
+    # PP 3 - Plot Roster
+    merge_at(i = c(7:9), j = 1) %>% 
+    valign(i = c(7:9), j = 1) %>% 
+    # PP 4 - Plot Details
+    merge_at(i = c(10:11), j = 1) %>% 
+    valign(i = c(10:11), j = 1) %>% 
+    # PP 6 - Crop Roster
+    merge_at(i = c(12:15), j = 1) %>% 
+    valign(i = c(12:15), j = 1) %>%
+    # Post-Harvest Questionnaire heading
+    flextable::merge_at(i = 16, j = c(1, 2, 3)) %>% 
+    align(i = 16, j = 1, align = 'center') %>% 
+    bold(i = 16, j = c(1, 2, 3)) %>% 
+    italic(i = 16, j = c(1, 2, 3)) %>%
+    # column labels
+    bold(i = 17, j = c(1, 2, 3)) %>% 
+    # PH 7 - Field Crop Production
+    merge_at(i = c(18:21), j = 1) %>% 
+    valign(i = c(18:21), j = 1) %>% 
+    # PH 8 - Field Crop Disposition
+    merge_at(i = c(22:26), j = 1) %>% 
+    valign(i = c(22:26), j = 1) %>%
+    # bold first column
+    bold(j = 1) %>%
+    # expand third column
+    width(j = 3, width = 3)
 
-                                      Network identification                                                                    Network identification allows respondents to identify co-ownership of parcels with individuals outside of the household.
+table2_tbl
 
-  **PP 3 - Plot Roster**              Land area measurement with GPS                                                           Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of plots for which the GPS area has not been measured.
-
-                                      Non-standard units of measurement for farmer self-reported land area.                    Reporting in standard units (for example, square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.
-
-                                      Plot as primary unit of observation for land preparation and crop planting information   Plot-level data collection is designed to improve respondent recall and makes possible analysis of the data at the plot-level.
-
-  **PP 4 - Plot Details**             Recording of plot manager                                                                Plot manager characteristics matter for plot level outcomes such as harvest. Identification of plot manager also allows for gender-specific productivity analysis, analysis of input allocation, gender-based crop cultivation patterns, etc.
-
-                                      Respondent selection/recording by plot                                                   \- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about plot characteristics. Plot managers may differ from plot to plot which means that each plot may have a different respondent.\
-                                                                                                                               - For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent\'s characteristics such as education on gender have on the data at the same level of observation of the data.
-
-  **PP 6 - Crop Roster**              Plot-crop as unit of observation for crops planted                                        Allows for detailed accounting of each of the crops planted and enables plot-level analysis of production.
-
-                                      Permanent and temporary crops in the same roster but with differentiated questions.      The plot may contain both permanent and temporary crops so both need to be reported in the same module, using the plot to anchor recall on planting. Permanent crops, such as trees, are likely not planted in the ongoing agricultural season, so year of planting instead of month of planting is recorded.
-
-                                      Reporting of seed quantity in non-standard units                                         Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.
-
-                                      Reference period for seed acquisition is \'reference agricultural season\'               The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.
-
-  ***Post-Harvest Questionnaire***                                                                                             
-
-  **Questionnaire module**            **Key design choice**                                                                    **Motivation/Considerations**
-
-  **PH 7 - Field Crop Production**    Respondent selection/recording by plot-crop                                              \- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about harvest. Plot managers may differ from plot to plot which means that each plot may have a different respondent.\
-                                                                                                                               - For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent\'s characteristics such as education on gender have on the harvest data.
-
-                                      Reporting of harvest quantity in non-standard units                                      Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.
-
-                                      Reporting of harvest quantity in different conditions.                                   The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed.
-
-                                      Decision-maker concerning use of harvest recorded                                        This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective.
-
-  **PH 8 - Field Crop Disposition**   Respondent selection/recording by crop                                                    Decision maker may vary from crop to crop, data considered most reliable if each decision-maker can respond in person rather than proxy response.
-
-                                      Reporting of harvest sales quantity in non-standard units                                Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.
-
-                                      Reporting of harvest sales quantity in different conditions.                             The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed.
-
-                                      Decision-maker concerning earnings from sold harvest recorded                            This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective.
-
-                                      Reference period for seed acquisition is \'reference agricultural season\'               The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
 
 ## Land Measurement
 

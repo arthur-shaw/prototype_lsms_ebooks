@@ -69,6 +69,14 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{fontspec}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -84,7 +92,7 @@
 \makeatother
 \subtitle{Lessons from the LSMS-ISA and Beyond}
 \author{Andrew Dillon, Gero Carletto, Sydney Gourlay, Philip Wollburg, Alberto Zezza}
-\date{2021-05-18}
+\date{2021-07-21}
 
 \begin{document}
 \maketitle
@@ -320,42 +328,176 @@ Choosing to measure production at the plot level requires a wider series of choi
 
 In summary, the key innovation in conducting plot-level production analysis is not to simply measure inputs and outputs at the plot level, but to distinguish the unit of analysis as plot-crop-season-manager. This unit of analysis facilitates comprehensive measurement of household production, allowing multiple analytical strategies from seasonal, crop and gender perspectives, but also has some limitations particularly in the context of a panel survey. Tracking plots is difficult between survey years which is one of the reasons that the LSMS-ISA surveys are conducted as a household panel (or household-parcel panel in select countries) with repeated cross-sections of plot, production, and input information. Another difficulty is related to plot characteristics that are relatively time-invariant within the survey period (such as soil characteristics, water source, plot topography) and time-varying characteristics (including labor, inputs, and capital utilization). We devote the next two chapters to the measurement of these time-invariant and time-variant characteristics but note that allocating these inputs and labor to the plot-crop-season-manager unit is often challenging.
 
-{[}{]}\{\#\_Toc70494951 .anchor\}Table 2. Survey Decisions that Inform Production Measurement
+\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.06}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.14}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.80}}@{}}
-\toprule
-\textbf{\emph{Post-Planting Questionnaire}} & & \\
-\midrule
-\endhead
-\textbf{Questionnaire module} & \textbf{Key design choice} & \textbf{Motivation/Considerations} \\
-\textbf{PP 1 - Parcel Roster} & Land area measurement with GPS & Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of parcels for which the GPS area has not been measured. \\
-& Non-standard units of measurement for farmer self-reported land area. & Reporting in standard units (square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase. \\
-\textbf{PP 2 - Parcel Details} & Individual-level ownership determined & Asset ownership, particularly of land in agrarian settings, is a critical factor of individual wealth and security. Individual-level ownership of land allows for gender-based analysis and monitoring of select SDG Indicators when coupled with other questions on land. \\
-& Network identification & ~Network identification allows respondents to identify co-ownership of parcels with individuals outside of the household. \\
-\textbf{PP 3 - Plot Roster} & Land area measurement with GPS & Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of plots for which the GPS area has not been measured. \\
-& Non-standard units of measurement for farmer self-reported land area. & Reporting in standard units (for example, square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase. \\
-& Plot as primary unit of observation for land preparation and crop planting information & Plot-level data collection is designed to improve respondent recall and makes possible analysis of the data at the plot-level. \\
-\textbf{PP 4 - Plot Details} & Recording of plot manager & Plot manager characteristics matter for plot level outcomes such as harvest. Identification of plot manager also allows for gender-specific productivity analysis, analysis of input allocation, gender-based crop cultivation patterns, etc. \\
-& Respondent selection/recording by plot & \vtop{\hbox{\strut - It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about plot characteristics. Plot managers may differ from plot to plot which means that each plot may have a different respondent.}\hbox{\strut - For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the data at the same level of observation of the data.}} \\
-\textbf{PP 6 - Crop Roster} & Plot-crop as unit of observation for crops planted & ~Allows for detailed accounting of each of the crops planted and enables plot-level analysis of production. \\
-& Permanent and temporary crops in the same roster but with differentiated questions. & The plot may contain both permanent and temporary crops so both need to be reported in the same module, using the plot to anchor recall on planting. Permanent crops, such as trees, are likely not planted in the ongoing agricultural season, so year of planting instead of month of planting is recorded. \\
-& Reporting of seed quantity in non-standard units & Reporting in standard units (e.g.~kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific. \\
-& Reference period for seed acquisition is 'reference agricultural season' & The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability. \\
-\textbf{\emph{Post-Harvest Questionnaire}} & & \\
-\textbf{Questionnaire module} & \textbf{Key design choice} & \textbf{Motivation/Considerations} \\
-\textbf{PH 7 - Field Crop Production} & Respondent selection/recording by plot-crop & \vtop{\hbox{\strut - It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about harvest. Plot managers may differ from plot to plot which means that each plot may have a different respondent.}\hbox{\strut - For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the harvest data.}} \\
-& Reporting of harvest quantity in non-standard units & Reporting in standard units (e.g.~kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific. \\
-& Reporting of harvest quantity in different conditions. & The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed. \\
-& Decision-maker concerning use of harvest recorded & This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective. \\
-\textbf{PH 8 - Field Crop Disposition} & Respondent selection/recording by crop & ~Decision maker may vary from crop to crop, data considered most reliable if each decision-maker can respond in person rather than proxy response. \\
-& Reporting of harvest sales quantity in non-standard units & Reporting in standard units (e.g.~kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific. \\
-& Reporting of harvest sales quantity in different conditions. & The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed. \\
-& Decision-maker concerning earnings from sold harvest recorded & This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective. \\
-& Reference period for seed acquisition is 'reference agricultural season' & The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability. \\
-\bottomrule
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{3.00in}}
+
+
+
+
+
+\endfirsthead
+
+
+
+\multicolumn{3}{!{\color[HTML]{666666}\vrule width 1pt}>{\centering}p{\dimexpr 4.5in+4\tabcolsep+2\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{\textit{Post-Planting\ Questionnaire}}}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Questionnaire\ module}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Key\ design\ choice}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Motivation/Considerations}}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Land\ area\ measurement\ with\ GPS}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Farmer\ self-reported\ land\ area\ has\ been\ found\ to\ be\ systematically\ biased\ so\ that\ farmer-reported\ land\ area\ measure\ is\ considered\ unreliable.\ Farmer-reported\ land\ area\ is\ still\ collected\ as\ it\ can\ be\ used\ to\ impute\ the\ area\ of\ parcels\ for\ which\ the\ GPS\ area\ has\ not\ been\ measured.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-2}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PP\ 1\ -\ Parcel\ Roster}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Non-standard\ units\ of\ measurement\ for\ farmer\ self-reported\ land\ area.\ }}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ in\ standard\ units\ (square\ meters\ or\ hectares)\ may\ pose\ difficulties\ for\ respondents\ in\ some\ cases\ and\ can\ worsen\ reporting\ error.\ Non-standard\ units\ should\ be\ country-specific.\ In\ some\ cases,\ conversion\ factors\ for\ non-standard\ units\ may\ vary\ by\ region,\ district,\ province,\ etc.\ Conversion\ factors\ must\ be\ available\ (either\ through\ existing\ data\ or\ supplemental\ conversion\ factor\ development\ work)\ in\ order\ to\ convert\ all\ land\ areas\ to\ a\ common\ unit\ in\ the\ analysis\ phase.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Individual-level\ ownership\ determined}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Asset\ ownership,\ particularly\ of\ land\ in\ agrarian\ settings,\ is\ a\ critical\ factor\ of\ individual\ wealth\ and\ security.\ Individual-level\ ownership\ of\ land\ allows\ for\ gender-based\ analysis\ and\ monitoring\ of\ select\ SDG\ Indicators\ when\ coupled\ with\ other\ questions\ on\ land.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-2}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PP\ 2\ -\ Parcel\ Details}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Network\ identification}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Network\ identification\ allows\ respondents\ to\ identify\ co-ownership\ of\ parcels\ with\ individuals\ outside\ of\ the\ household.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Land\ area\ measurement\ with\ GPS}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Farmer\ self-reported\ land\ area\ has\ been\ found\ to\ be\ systematically\ biased\ so\ that\ farmer-reported\ land\ area\ measure\ is\ considered\ unreliable.\ Farmer-reported\ land\ area\ is\ still\ collected\ as\ it\ can\ be\ used\ to\ impute\ the\ area\ of\ plots\ for\ which\ the\ GPS\ area\ has\ not\ been\ measured.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Non-standard\ units\ of\ measurement\ for\ farmer\ self-reported\ land\ area.\ }}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ in\ standard\ units\ (for\ example,\ square\ meters\ or\ hectares)\ may\ pose\ difficulties\ for\ respondents\ in\ some\ cases\ and\ can\ worsen\ reporting\ error.\ Non-standard\ units\ should\ be\ country-specific.\ In\ some\ cases,\ conversion\ factors\ for\ non-standard\ units\ may\ vary\ by\ region,\ district,\ province,\ etc.\ Conversion\ factors\ must\ be\ available\ (either\ through\ existing\ data\ or\ supplemental\ conversion\ factor\ development\ work)\ in\ order\ to\ convert\ all\ land\ areas\ to\ a\ common\ unit\ in\ the\ analysis\ phase.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-3}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PP\ 3\ -\ Plot\ Roster}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Plot\ as\ primary\ unit\ of\ observation\ for\ land\ preparation\ and\ crop\ planting\ information}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Plot-level\ data\ collection\ is\ designed\ to\ improve\ respondent\ recall\ and\ makes\ possible\ analysis\ of\ the\ data\ at\ the\ plot-level.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Recording\ of\ plot\ manager}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Plot\ manager\ characteristics\ matter\ for\ plot\ level\ outcomes\ such\ as\ harvest.\ Identification\ of\ plot\ manager\ also\ allows\ for\ gender-specific\ productivity\ analysis,\ analysis\ of\ input\ allocation,\ gender-based\ crop\ cultivation\ patterns,\ etc.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-2}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PP\ 4\ -\ Plot\ Details}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Respondent\ selection/recording\ by\ plot}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-\ It\ is\ recommended\ that\ the\ plot\ manager,\ being\ the\ most\ knowledgeable\ person\ concerning\ the\ plot,\ respond\ to\ the\ questions\ about\ plot\ characteristics.\ Plot\ managers\ may\ differ\ from\ plot\ to\ plot\ which\ means\ that\ each\ plot\ may\ have\ a\ different\ respondent.\ -\ For\ data\ analysis,\ recording\ the\ ID\ of\ the\ respondent\ allows\ controlling\ for\ the\ effect\ that\ the\ respondent's\ characteristics\ such\ as\ education\ on\ gender\ have\ on\ the\ data\ at\ the\ same\ level\ of\ observation\ of\ the\ data.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Plot-crop\ as\ unit\ of\ observation\ for\ crops\ planted}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Allows\ for\ detailed\ accounting\ of\ each\ of\ the\ crops\ planted\ and\ enables\ plot-level\ analysis\ of\ production.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permanent\ and\ temporary\ crops\ in\ the\ same\ roster\ but\ with\ differentiated\ questions.}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ plot\ may\ contain\ both\ permanent\ and\ temporary\ crops\ so\ both\ need\ to\ be\ reported\ in\ the\ same\ module,\ using\ the\ plot\ to\ anchor\ recall\ on\ planting.\ Permanent\ crops,\ such\ as\ trees,\ are\ likely\ not\ planted\ in\ the\ ongoing\ agricultural\ season,\ so\ year\ of\ planting\ instead\ of\ month\ of\ planting\ is\ recorded.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ of\ seed\ quantity\ in\ non-standard\ units}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ in\ standard\ units\ (e.g.\ kilograms)\ poses\ difficulties\ for\ respondents\ and\ can\ worsen\ reporting\ error.\ Non-standard\ units\ should\ be\ country-specific.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-4}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PP\ 6\ -\ Crop\ Roster}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reference\ period\ for\ seed\ acquisition\ is\ 'reference\ agricultural\ season'}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ reference\ period\ aligns\ with\ the\ actual\ production\ cycle\ aiding\ respondent\ recall\ and\ improving\ data\ reliability.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{3}{!{\color[HTML]{666666}\vrule width 1pt}>{\centering}p{\dimexpr 4.5in+4\tabcolsep+2\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{\textit{Post-Harvest\ Questionnaire}}}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Questionnaire\ module}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Key\ design\ choice}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Motivation/Considerations}}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Respondent\ selection/recording\ by\ plot-crop}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-\ It\ is\ recommended\ that\ the\ plot\ manager,\ being\ the\ most\ knowledgeable\ person\ concerning\ the\ plot,\ respond\ to\ the\ questions\ about\ harvest.\ Plot\ managers\ may\ differ\ from\ plot\ to\ plot\ which\ means\ that\ each\ plot\ may\ have\ a\ different\ respondent.\ -\ For\ data\ analysis,\ recording\ the\ ID\ of\ the\ respondent\ allows\ controlling\ for\ the\ effect\ that\ the\ respondent's\ characteristics\ such\ as\ education\ on\ gender\ have\ on\ the\ harvest\ data.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ of\ harvest\ quantity\ in\ non-standard\ units}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ in\ standard\ units\ (e.g.\ kilograms)\ poses\ difficulties\ for\ respondents\ and\ can\ worsen\ reporting\ error.\ Non-standard\ units\ should\ be\ country-specific.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ of\ harvest\ quantity\ in\ different\ conditions.\ }}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ weight\ and\ value\ of\ harvest\ may\ vary\ depending\ on\ the\ condition\ in\ which\ it\ was\ harvested\ and/or\ weighed.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-4}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PH\ 7\ -\ Field\ Crop\ Production}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Decision-maker\ concerning\ use\ of\ harvest\ recorded}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}This\ allows\ for\ understanding\ household\ decision-making\ over\ the\ production\ process,\ which\ is\ especially\ relevant\ from\ a\ gender\ perspective.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Respondent\ selection/recording\ by\ crop}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Decision\ maker\ may\ vary\ from\ crop\ to\ crop,\ data\ considered\ most\ reliable\ if\ each\ decision-maker\ can\ respond\ in\ person\ rather\ than\ proxy\ response.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ of\ harvest\ sales\ quantity\ in\ non-standard\ units}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ in\ standard\ units\ (e.g.\ kilograms)\ poses\ difficulties\ for\ respondents\ and\ can\ worsen\ reporting\ error.\ Non-standard\ units\ should\ be\ country-specific.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reporting\ of\ harvest\ sales\ quantity\ in\ different\ conditions.\ }}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ weight\ and\ value\ of\ harvest\ may\ vary\ depending\ on\ the\ condition\ in\ which\ it\ was\ harvested\ and/or\ weighed.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Decision-maker\ concerning\ earnings\ from\ sold\ harvest\ recorded}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}This\ allows\ for\ understanding\ household\ decision-making\ over\ the\ production\ process,\ which\ is\ especially\ relevant\ from\ a\ gender\ perspective.\ }}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{2-3}
+
+
+
+\multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\multirow[c]{-5}{*}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{PH\ 8\ -\ Field\ Crop\ Disposition}}}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reference\ period\ for\ seed\ acquisition\ is\ 'reference\ agricultural\ season'}}} & \multicolumn{1}{!{\color[HTML]{666666}\vrule width 1pt}>{\raggedright}p{\dimexpr 3in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{666666}\vrule width 1pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ reference\ period\ aligns\ with\ the\ actual\ production\ cycle\ aiding\ respondent\ recall\ and\ improving\ data\ reliability.}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{1pt}}\arrayrulecolor[HTML]{666666}\cline{1-3}
+
 \end{longtable}
 
 \hypertarget{land-measurement}{%
@@ -1204,84 +1346,430 @@ Refer to attachment.
 
 Refer to attachment which is extracted from Zezza et al.~(2016b).
 
-{[}{]}\{\#\_Toc70494920 .anchor\}
-
 \hypertarget{appendix-iii-glossary}{%
 \chapter*{Appendix III: Glossary}\label{appendix-iii-glossary}}
 \addcontentsline{toc}{chapter}{Appendix III: Glossary}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Term} & \textbf{Description} \\
-\midrule
+\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+\begin{longtable}[c]{|p{2.00in}|p{2.00in}}
+
+
+
+\hhline{~~}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{B1422F}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Term}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{B1422F}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Description}}}} \\
+
+
+
+\endfirsthead
+
+\hhline{~~}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{B1422F}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Term}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{B1422F}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}\textbf{Description}}}} \\
+
 \endhead
-Administrative data & ~Data generated as a by-product of registration and other administrative and service delivery functions of government entities or other organizations. Examples include registries of large farms or information collected through agricultural extension services. \\
-Agricultural season & ~Agricultural season refers to the portion of a year in which seasonal crops are typically grown in a given locale. This is dictated by local climatic conditions. In agricultural survey instruments, the `reference agricultural season' is used to demarcate and refer to the production cycle of interest. \\
-Agro-forestry & ~Land use system in which trees or shrubs are deliberately grown on a plot of land together with crops and animals. \\
-Area sampling & Sampling method used when no complete sampling frame is available, based on dividing the land area under study into smaller areas and sampling from the list of those smaller areas. \\
-Attrition & ~In longitudinal surveys, attrition refers to the loss of survey participants (households, holdings, individuals) over time, with each subsequent round of the survey. \\
-Bias & ~In statistics, an estimator is biased when its expected value differs from the true value of the underlying parameter. \\
-Census & ~The full enumeration or count of an entire population of interest, such as farms or agricultural holdings (agricultural census) or households (population and housing census). \\
-Compass and rope & ~A method to measure the area of a unit of land reliably using poles, robes, compasses. \\
-Computer Assisted Personal Interviewing (CAPI) & A survey mode in which the survey questionnaire is pre-programmed on a tablet or computer and administered to the respondent in person by an interviewer. \\
-Consumption aggregate & Total value of items consumed by the household over a given reference period, common welfare metric used widely to determine whether a household is considered poor. \\
-Crop cutting & Crop cutting is a more objective measurement method for crop production than farmer recall, considered the gold standard for measuring crop production and yields. Randomly located subplots within a given plots are harvested and weighted before and after drying. \\
-Crop rotation & Farming method whereby crops on a plot are grown one after the other with the aim of maintaining fertile soil on the plot. \\
-Crop Yield & Quantity of crop obtained per unit of land area used. \\
-Data collection mode & ~Data collection mode or survey mode is the method used to collect the data. Examples include face-to-face, telephone, mail, and web-based surveys. \\
-Enumerator & Interviewer in surveys. \\
-External validity & ~Extent to which results from a study or experiment can be generalized beyond its original context. \\
-Geospatial data & Data related by geographic location, such as maps, satellite or remote sensing data. \\
-Gold standard & ~In survey design, a method for collecting data on a given parameter that is regarded as yielding highly reliable data. \\
-Head of the household & ~Individual household member who is (considered by other household members) the main decision maker in a given household. \\
-Holding & Economic unit of agricultural production under single management, comprising all livestock kept and all land used wholly or partly for agricultural production purposes, without regard to title, legal form, or size (FAO, WCA 2020). \\
-Household & A household usually refers to a group of individuals who eat meals together and live in the same dwelling. In addition, according to the production-based definition of the household, it consists of adult individuals co-mingle revenues from agricultural production and non-farm enterprise for consumption. The production-based definition is used less frequently. \\
-Household member & ~Individual who is a member of a given household. \\
-Intercropping & Cultivation of more than one temporary and/or permanent crop simultaneously on the same plot. \\
-Internal validity & ~Extent to which a causal effect is soundly identified in a study or experiment. \\
-Land tenure & Land tenure defines the property and use rights of an individual or group with respect to land. \\
-Longitudinal survey & ~A panel or longitudinal survey is a survey in which the same survey units (households, holdings, individuals) are re-visited for at least one round after the baseline survey round. \\
-Measurement error & ~Deviation of a measured value of a parameter from its true value. \\
-Multi-topic household survey & Sample survey with the household as its main unit of analysis and that studies multiple issues affecting the household, such as education, employment, poverty, migration, among others. \\
-National Statistical Office (NSO) & Government agency in charge of producing official statistics. \\
-Nonresponse & ~In surveys, nonresponse refers to selected respondents altogether failing to participate in the survey (unit nonresponse) or failing to respond to certain questions of the survey (item nonresponse). \\
-Non-sampling error & Survey error not due to sampling, such as response errors, when survey respondents misreport on survey questions for example because survey questions are poorly framed, or errors resulting from nonresponse. \\
-Panel survey & ~A panel or longitudinal survey is a survey in which the same survey units (households, holdings, individuals) are re-visited for at least one round after the baseline survey round. \\
-Paper Assisted Personal interviewing (PAPI) & Survey interview mode whereby the enumerator uses pen and paper to fill the questionnaire. \\
-Parcel & ~A parcel is a piece of land of one land tenure type entirely surrounded by other land, water, road, forest or other features not forming part of the holding, or forming part of the holding under a different land tenure type. A parcel may comprise one or more plots. \\
-Pastoralism & Livestock production system involving the grazing of livestock herds on rangelands and large pastures typically practiced by nomadic people who move with their herds. \\
-Permanent crops & Crops with a growing cycle of more than one year (FAO, WCA 2020), and which do not need to be replanted after one growing cycle. Also referred to as \emph{perennial crops}. \\
-Plot & ~A plot is defined as a continuous piece of land on which a specific crop or a mixture of crops is grown, or which is fallow or waiting to be planted. \\
-Plot manager & The~manager of an agricultural plot is typically the main decision maker regarding crops planted, inputs applied, and output harvested. \\
-Post-harvest questionnaire & ~Questionnaire administered during the post-harvest visit of the survey, that is, a survey visit taking place after the farm's main harvest of temporary/seasonal crops has been completed. \\
-Post-planting questionnaire & ~Questionnaire administered during the post-planting visit of the survey, that is a survey visit taking place after the farm has completed the planting period of its main temporary/seasonal crops. \\
-Productivity & ~In this volume, productivity refers to agricultural productivity, whether yield (output per area of land), labor productivity (output per unit of labor or per worker), or total factor productivity, taking into account all inputs and outputs. \\
-Proxy response & In proxy response, an individual responds on behalf another individual, rather than all individuals responding directly for themselves. \\
-Randomized controlled trial & Scientific experiment to test the causal effect of a treatment or an intervention while controlling for confounding factors through experimental design. \\
-Recall & Recall refers to the process of respondents self-reporting of past events of interest. \\
-Recall period & Length of the period between the interview and an event the respondent is requested to recall. \\
-Reference period & The period of reference for a survey question, for example, the reference agricultural season or the last 7 days. \\
-Representativeness & ~A sample is representative if it accurately reflects the study population of interest with respect to a set of predefined characteristics. \\
-Research design & Methods, techniques, and strategies chosen to answer a given research question. \\
-Root crops & ~Root crops or root vegetables are those crops whose roots are meant for consumption, such as cassava or onions. \\
-Sample survey & Survey based on a sample of the entire population of interest, rather than full enumeration, usually designed to be representative of the population of interest. \\
-Sampling & Selecting a predetermined number of units from a population of interest, such as farms or households. \\
-Sampling error & Deviation of sample means from true population means leading to reduced representativeness of the sample. \\
-Sampling frame & ~A list of units, such as farms, from which a survey sample is drawn. \\
-Sex-disaggregated data & Data that allows distinguishing between women and men at the level of the individual. \\
-Skip sequences/patterns & In survey questionnaires, a skip pattern routes the respondent to a specific question based on his or her answer to a previous question. \\
-Smallholder & ~A smallholder or smallholder farmer is a person who owns and/or operates a small-scale agricultural holding, whether defined by land area, production volume, production technology, or other factors. \\
-Social desirability bias & ~Social desirability bias refers to a response bias whereby survey respondents answer survey questions in a way they perceive as pleasing the interviewer. \\
-Survey design & Methods and techniques for developing and implementing a survey. \\
-Survey experiment & Scientific experiment to test the impact of survey design on measurement through surveys. \\
-Survey methodology & The study of survey methods. \\
-Survey respondent & Individual who respondents to survey questions. \\
-Temporary crops & Crops with at least one growing cycle (planting and harvesting) per agricultural year, often once per reference agricultural season. \\
-Total survey error & ~The sum of all errors from design, implementation, data processing and analysis of surveys. \\
-Tropical livestock units & A standardized unit for measuring the stock of live animals independent of their breed or size. \\
-Unit of analysis & The unit of analysis or unit of observation is the unit of interest of a study or survey, such as farms, individuals, households, or enterprises. The unit of analysis may vary in one survey or study. \\
-Welfare & ~Measure of material wellbeing. \\
-\bottomrule
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Administrative\ data}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Data\ generated\ as\ a\ by-product\ of\ registration\ and\ other\ administrative\ and\ service\ delivery\ functions\ of\ government\ entities\ or\ other\ organizations.\ Examples\ include\ registries\ of\ large\ farms\ or\ information\ collected\ through\ agricultural\ extension\ services.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Agricultural\ season}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Agricultural\ season\ refers\ to\ the\ portion\ of\ a\ year\ in\ which\ seasonal\ crops\ are\ typically\ grown\ in\ a\ given\ locale.\ This\ is\ dictated\ by\ local\ climatic\ conditions.\ In\ agricultural\ survey\ instruments,\ the\ ‘reference\ agricultural\ season’\ is\ used\ to\ demarcate\ and\ refer\ to\ the\ production\ cycle\ of\ interest.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Agro-forestry}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Land\ use\ system\ in\ which\ trees\ or\ shrubs\ are\ deliberately\ grown\ on\ a\ plot\ of\ land\ together\ with\ crops\ and\ animals.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Area\ sampling}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sampling\ method\ used\ when\ no\ complete\ sampling\ frame\ is\ available,\ based\ on\ dividing\ the\ land\ area\ under\ study\ into\ smaller\ areas\ and\ sampling\ from\ the\ list\ of\ those\ smaller\ areas.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Attrition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} In\ longitudinal\ surveys,\ attrition\ refers\ to\ the\ loss\ of\ survey\ participants\ (households,\ holdings,\ individuals)\ over\ time,\ with\ each\ subsequent\ round\ of\ the\ survey.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Bias}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} In\ statistics,\ an\ estimator\ is\ biased\ when\ its\ expected\ value\ differs\ from\ the\ true\ value\ of\ the\ underlying\ parameter.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Census}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} The\ full\ enumeration\ or\ count\ of\ an\ entire\ population\ of\ interest,\ such\ as\ farms\ or\ agricultural\ holdings\ (agricultural\ census)\ or\ households\ (population\ and\ housing\ census).\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Compass\ and\ rope}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ method\ to\ measure\ the\ area\ of\ a\ unit\ of\ land\ reliably\ using\ poles,\ robes,\ compasses.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Computer\ Assisted\ Personal\ Interviewing\ (CAPI)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}A\ survey\ mode\ in\ which\ the\ survey\ questionnaire\ is\ pre-programmed\ on\ a\ tablet\ or\ computer\ and\ administered\ to\ the\ respondent\ in\ person\ by\ an\ interviewer.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Consumption\ aggregate}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Total\ value\ of\ items\ consumed\ by\ the\ household\ over\ a\ given\ reference\ period,\ common\ welfare\ metric\ used\ widely\ to\ determine\ whether\ a\ household\ is\ considered\ poor.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Crop\ cutting}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Crop\ cutting\ is\ a\ more\ objective\ measurement\ method\ for\ crop\ production\ than\ farmer\ recall,\ considered\ the\ gold\ standard\ for\ measuring\ crop\ production\ and\ yields.\ Randomly\ located\ subplots\ within\ a\ given\ plots\ are\ harvested\ and\ weighted\ before\ and\ after\ drying.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Crop\ rotation}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Farming\ method\ whereby\ crops\ on\ a\ plot\ are\ grown\ one\ after\ the\ other\ with\ the\ aim\ of\ maintaining\ fertile\ soil\ on\ the\ plot.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Crop\ Yield}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Quantity\ of\ crop\ obtained\ per\ unit\ of\ land\ area\ used.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Data\ collection\ mode}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Data\ collection\ mode\ or\ survey\ mode\ is\ the\ method\ used\ to\ collect\ the\ data.\ Examples\ include\ face-to-face,\ telephone,\ mail,\ and\ web-based\ surveys.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Enumerator}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Interviewer\ in\ surveys.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}External\ validity}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Extent\ to\ which\ results\ from\ a\ study\ or\ experiment\ can\ be\ generalized\ beyond\ its\ original\ context.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Geospatial\ data}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Data\ related\ by\ geographic\ location,\ such\ as\ maps,\ satellite\ or\ remote\ sensing\ data.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Gold\ standard}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} In\ survey\ design,\ a\ method\ for\ collecting\ data\ on\ a\ given\ parameter\ that\ is\ regarded\ as\ yielding\ highly\ reliable\ data.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Head\ of\ the\ household}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Individual\ household\ member\ who\ is\ (considered\ by\ other\ household\ members)\ the\ main\ decision\ maker\ in\ a\ given\ household.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Holding}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Economic\ unit\ of\ agricultural\ production\ under\ single\ management,\ comprising\ all\ livestock\ kept\ and\ all\ land\ used\ wholly\ or\ partly\ for\ agricultural\ production\ purposes,\ without\ regard\ to\ title,\ legal\ form,\ or\ size\ (FAO,\ WCA\ 2020).}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Household}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}A\ household\ usually\ refers\ to\ a\ group\ of\ individuals\ who\ eat\ meals\ together\ and\ live\ in\ the\ same\ dwelling.\ In\ addition,\ according\ to\ the\ production-based\ definition\ of\ the\ household,\ it\ consists\ of\ adult\ individuals\ co-mingle\ revenues\ from\ agricultural\ production\ and\ non-farm\ enterprise\ for\ consumption.\ The\ production-based\ definition\ is\ used\ less\ frequently.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Household\ member}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Individual\ who\ is\ a\ member\ of\ a\ given\ household.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Intercropping}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Cultivation\ of\ more\ than\ one\ temporary\ and/or\ permanent\ crop\ simultaneously\ on\ the\ same\ plot.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Internal\ validity}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Extent\ to\ which\ a\ causal\ effect\ is\ soundly\ identified\ in\ a\ study\ or\ experiment.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Land\ tenure}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Land\ tenure\ defines\ the\ property\ and\ use\ rights\ of\ an\ individual\ or\ group\ with\ respect\ to\ land.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Longitudinal\ survey}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ panel\ or\ longitudinal\ survey\ is\ a\ survey\ in\ which\ the\ same\ survey\ units\ (households,\ holdings,\ individuals)\ are\ re-visited\ for\ at\ least\ one\ round\ after\ the\ baseline\ survey\ round.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement\ error}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Deviation\ of\ a\ measured\ value\ of\ a\ parameter\ from\ its\ true\ value.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Multi-topic\ household\ survey}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sample\ survey\ with\ the\ household\ as\ its\ main\ unit\ of\ analysis\ and\ that\ studies\ multiple\ issues\ affecting\ the\ household,\ such\ as\ education,\ employment,\ poverty,\ migration,\ among\ others.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}National\ Statistical\ Office\ (NSO)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Government\ agency\ in\ charge\ of\ producing\ official\ statistics.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Nonresponse}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} In\ surveys,\ nonresponse\ refers\ to\ selected\ respondents\ altogether\ failing\ to\ participate\ in\ the\ survey\ (unit\ nonresponse)\ or\ failing\ to\ respond\ to\ certain\ questions\ of\ the\ survey\ (item\ nonresponse).}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Non-sampling\ error}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ error\ not\ due\ to\ sampling,\ such\ as\ response\ errors,\ when\ survey\ respondents\ misreport\ on\ survey\ questions\ for\ example\ because\ survey\ questions\ are\ poorly\ framed,\ or\ errors\ resulting\ from\ nonresponse.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Panel\ survey}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ panel\ or\ longitudinal\ survey\ is\ a\ survey\ in\ which\ the\ same\ survey\ units\ (households,\ holdings,\ individuals)\ are\ re-visited\ for\ at\ least\ one\ round\ after\ the\ baseline\ survey\ round.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Paper\ Assisted\ Personal\ interviewing\ (PAPI)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ interview\ mode\ whereby\ the\ enumerator\ uses\ pen\ and\ paper\ to\ fill\ the\ questionnaire.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Parcel}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ parcel\ is\ a\ piece\ of\ land\ of\ one\ land\ tenure\ type\ entirely\ surrounded\ by\ other\ land,\ water,\ road,\ forest\ or\ other\ features\ not\ forming\ part\ of\ the\ holding,\ or\ forming\ part\ of\ the\ holding\ under\ a\ different\ land\ tenure\ type.\ A\ parcel\ may\ comprise\ one\ or\ more\ plots.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Pastoralism}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Livestock\ production\ system\ involving\ the\ grazing\ of\ livestock\ herds\ on\ rangelands\ and\ large\ pastures\ typically\ practiced\ by\ nomadic\ people\ who\ move\ with\ their\ herds.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permanent\ crops}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Crops\ with\ a\ growing\ cycle\ of\ more\ than\ one\ year\ (FAO,\ WCA\ 2020),\ and\ which\ do\ not\ need\ to\ be\ replanted\ after\ one\ growing\ cycle.\ Also\ referred\ to\ as\ perennial\ crops.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Plot}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ plot\ is\ defined\ as\ a\ continuous\ piece\ of\ land\ on\ which\ a\ specific\ crop\ or\ a\ mixture\ of\ crops\ is\ grown,\ or\ which\ is\ fallow\ or\ waiting\ to\ be\ planted.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Plot\ manager}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The manager\ of\ an\ agricultural\ plot\ is\ typically\ the\ main\ decision\ maker\ regarding\ crops\ planted,\ inputs\ applied,\ and\ output\ harvested.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Post-harvest\ questionnaire}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Questionnaire\ administered\ during\ the\ post-harvest\ visit\ of\ the\ survey,\ that\ is,\ a\ survey\ visit\ taking\ place\ after\ the\ farm’s\ main\ harvest\ of\ temporary/seasonal\ crops\ has\ been\ completed.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Post-planting\ questionnaire}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Questionnaire\ administered\ during\ the\ post-planting\ visit\ of\ the\ survey,\ that\ is\ a\ survey\ visit\ taking\ place\ after\ the\ farm\ has\ completed\ the\ planting\ period\ of\ its\ main\ temporary/seasonal\ crops.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Productivity}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} In\ this\ volume,\ productivity\ refers\ to\ agricultural\ productivity,\ whether\ yield\ (output\ per\ area\ of\ land),\ labor\ productivity\ (output\ per\ unit\ of\ labor\ or\ per\ worker),\ or\ total\ factor\ productivity,\ taking\ into\ account\ all\ inputs\ and\ outputs.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Proxy\ response}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}In\ proxy\ response,\ an\ individual\ responds\ on\ behalf\ another\ individual,\ rather\ than\ all\ individuals\ responding\ directly\ for\ themselves.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Randomized\ controlled\ trial}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Scientific\ experiment\ to\ test\ the\ causal\ effect\ of\ a\ treatment\ or\ an\ intervention\ while\ controlling\ for\ confounding\ factors\ through\ experimental\ design.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Recall}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Recall\ refers\ to\ the\ process\ of\ respondents\ self-reporting\ of\ past\ events\ of\ interest.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Recall\ period}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Length\ of\ the\ period\ between\ the\ interview\ and\ an\ event\ the\ respondent\ is\ requested\ to\ recall.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Reference\ period}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ period\ of\ reference\ for\ a\ survey\ question,\ for\ example,\ the\ reference\ agricultural\ season\ or\ the\ last\ 7\ days.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Representativeness}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ sample\ is\ representative\ if\ it\ accurately\ reflects\ the\ study\ population\ of\ interest\ with\ respect\ to\ a\ set\ of\ predefined\ characteristics.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Research\ design}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Methods,\ techniques,\ and\ strategies\ chosen\ to\ answer\ a\ given\ research\ question.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Root\ crops}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Root\ crops\ or\ root\ vegetables\ are\ those\ crops\ whose\ roots\ are\ meant\ for\ consumption,\ such\ as\ cassava\ or\ onions.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sample\ survey}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ based\ on\ a\ sample\ of\ the\ entire\ population\ of\ interest,\ rather\ than\ full\ enumeration,\ usually\ designed\ to\ be\ representative\ of\ the\ population\ of\ interest.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sampling}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Selecting\ a\ predetermined\ number\ of\ units\ from\ a\ population\ of\ interest,\ such\ as\ farms\ or\ households.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sampling\ error}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Deviation\ of\ sample\ means\ from\ true\ population\ means\ leading\ to\ reduced\ representativeness\ of\ the\ sample.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sampling\ frame}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ list\ of\ units,\ such\ as\ farms,\ from\ which\ a\ survey\ sample\ is\ drawn.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Sex-disaggregated\ data}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Data\ that\ allows\ distinguishing\ between\ women\ and\ men\ at\ the\ level\ of\ the\ individual.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Skip\ sequences/patterns}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}In\ survey\ questionnaires,\ a\ skip\ pattern\ routes\ the\ respondent\ to\ a\ specific\ question\ based\ on\ his\ or\ her\ answer\ to\ a\ previous\ question.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Smallholder}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} A\ smallholder\ or\ smallholder\ farmer\ is\ a\ person\ who\ owns\ and/or\ operates\ a\ small-scale\ agricultural\ holding,\ whether\ defined\ by\ land\ area,\ production\ volume,\ production\ technology,\ or\ other\ factors.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Social\ desirability\ bias}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Social\ desirability\ bias\ refers\ to\ a\ response\ bias\ whereby\ survey\ respondents\ answer\ survey\ questions\ in\ a\ way\ they\ perceive\ as\ pleasing\ the\ interviewer.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ design}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Methods\ and\ techniques\ for\ developing\ and\ implementing\ a\ survey.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ experiment}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Scientific\ experiment\ to\ test\ the\ impact\ of\ survey\ design\ on\ measurement\ through\ surveys.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ methodology}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ study\ of\ survey\ methods.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Survey\ respondent}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Individual\ who\ respondents\ to\ survey\ questions.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Temporary\ crops}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Crops\ with\ at\ least\ one\ growing\ cycle\ (planting\ and\ harvesting)\ per\ agricultural\ year,\ often\ once\ per\ reference\ agricultural\ season.}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Total\ survey\ error}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} The\ sum\ of\ all\ errors\ from\ design,\ implementation,\ data\ processing\ and\ analysis\ of\ surveys.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Tropical\ livestock\ units}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}A\ standardized\ unit\ for\ measuring\ the\ stock\ of\ live\ animals\ independent\ of\ their\ breed\ or\ size.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Unit\ of\ analysis}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\cellcolor[HTML]{E7CBBF}\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}The\ unit\ of\ analysis\ or\ unit\ of\ observation\ is\ the\ unit\ of\ interest\ of\ a\ study\ or\ survey,\ such\ as\ farms,\ individuals,\ households,\ or\ enterprises.\ The\ unit\ of\ analysis\ may\ vary\ in\ one\ survey\ or\ study.\ }}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Welfare}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial} Measure\ of\ material\ wellbeing.}}} \\
+
+
+
 \end{longtable}
 
 \end{document}

@@ -2,5 +2,11 @@
 
 Refer to attachment which is extracted from Zezza et al. (2016b).
 
-[]{#_Toc70494920 .anchor}
+```{r, include=FALSE}
+knitr::include_url(
+    url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQPHo0GOZxq3t_3Yw0DmmURhUZE9PEn2sUmsZSi7y1-0-cEDlP5NwyUT5eb-wO7fJP3VKJIGGQbsB7F/pubhtml?gid=1861602822&amp;single=true&amp;widget=true&amp;headers=false",
+    height = "900px"
+)
+```
+
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Andrew Dillon, Gero Carletto, Sydney Gourlay, Philip Wollburg, Alberto Zezza" />
 
 
-<meta name="date" content="2021-05-18" />
+<meta name="date" content="2021-07-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="chapter-2-survey-methodology-for-agricultural-data-collection.html"/>
 <link rel="next" href="chapter-4-agricultural-inputs.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,6 +53,7 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
 
 
 
@@ -150,150 +151,58 @@
 <p>LSMS surveys have primarily taken a production function design objective with complementary questions related to farm revenues and costs without extensively providing a method to calculate farm profits. In early versions of the LSMS surveys and many other multi-topic household surveys, agricultural activities were not detailed at the plot level, as this requires a higher respondent burden relative to household level recall. One innovation of recent LSMS-ISA surveys has been to use the plot as the unit of analysis for field crop data collection. The advantage of this approach is that it more accurately measures the relationship between input and outputs in agricultural production when the household head may not manage all production. Production heterogeneity results from differences in crops cultivated that require different levels of inputs and management by several plot managers. The level of detail required in subsequent modules does not make this survey design choice trivial. Plot level data collection requires not only measuring land area at the plot level, but levels of production, labor, capital, chemical inputs, and land management techniques disaggregated at the plot level.</p>
 <p>Choosing to measure production at the plot level requires a wider series of choices in identifying the unit of analysis which has design and empirical implications. First, agricultural production is seasonal and may involve multiple crop cycles on a given plot that need to be measured. Second, plots are not always associated with a single crop, as multi-cropping or inter-cropping is an important land management practice to increase yield and land quality. Third, property rights are not necessarily well established in many rural contexts, and multiple family members may work on the plot or cultivate the plot in different seasons. The land owner may be different than the person making decisions to cultivate the land, as share-cropping, land leasing or land lending may mean that land owners are not making agricultural decisions. Holden et al. (2016) describe survey design choices in modules used to describe land tenure. Depending on the empirical applications of data collected, information on sources of land acquisition including inheritance and legal status, land transactions, formal and informal property rights, land conflicts, perceptions of tenure security and trust in land-related institutions may all be important additional questions complementary to the land roster. This is especially true if the survey aims to monitor Sustainable Development Goals related to land tenure, particularly SDG 5.a.1 and 1.4.2. Recognizing the importance of land tenure security as it relates to investment and the control of and access to other assets such as credit, both of these SDG Indicators seek to measure and monitor specific aspects of land tenure at the <em>individual</em> level, rather than at the household level.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p>In summary, the key innovation in conducting plot-level production analysis is not to simply measure inputs and outputs at the plot level, but to distinguish the unit of analysis as plot-crop-season-manager. This unit of analysis facilitates comprehensive measurement of household production, allowing multiple analytical strategies from seasonal, crop and gender perspectives, but also has some limitations particularly in the context of a panel survey. Tracking plots is difficult between survey years which is one of the reasons that the LSMS-ISA surveys are conducted as a household panel (or household-parcel panel in select countries) with repeated cross-sections of plot, production, and input information. Another difficulty is related to plot characteristics that are relatively time-invariant within the survey period (such as soil characteristics, water source, plot topography) and time-varying characteristics (including labor, inputs, and capital utilization). We devote the next two chapters to the measurement of these time-invariant and time-variant characteristics but note that allocating these inputs and labor to the plot-crop-season-manager unit is often challenging.</p>
-<p>[]{#_Toc70494951 .anchor}Table 2. Survey Decisions that Inform Production Measurement</p>
-<table style="width:100%;">
-<colgroup>
-<col width="5%" />
-<col width="14%" />
-<col width="79%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left"><strong><em>Post-Planting Questionnaire</em></strong></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><strong>Questionnaire module</strong></td>
-<td><strong>Key design choice</strong></td>
-<td><strong>Motivation/Considerations</strong></td>
-</tr>
-<tr class="even">
-<td align="left"><strong>PP 1 - Parcel Roster</strong></td>
-<td>Land area measurement with GPS</td>
-<td>Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of parcels for which the GPS area has not been measured.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Non-standard units of measurement for farmer self-reported land area.</td>
-<td>Reporting in standard units (square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.</td>
-</tr>
-<tr class="even">
-<td align="left"><strong>PP 2 - Parcel Details</strong></td>
-<td>Individual-level ownership determined</td>
-<td>Asset ownership, particularly of land in agrarian settings, is a critical factor of individual wealth and security. Individual-level ownership of land allows for gender-based analysis and monitoring of select SDG Indicators when coupled with other questions on land.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Network identification</td>
-<td> Network identification allows respondents to identify co-ownership of parcels with individuals outside of the household.</td>
-</tr>
-<tr class="even">
-<td align="left"><strong>PP 3 - Plot Roster</strong></td>
-<td>Land area measurement with GPS</td>
-<td>Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of plots for which the GPS area has not been measured.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Non-standard units of measurement for farmer self-reported land area.</td>
-<td>Reporting in standard units (for example, square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Plot as primary unit of observation for land preparation and crop planting information</td>
-<td>Plot-level data collection is designed to improve respondent recall and makes possible analysis of the data at the plot-level.</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong>PP 4 - Plot Details</strong></td>
-<td>Recording of plot manager</td>
-<td>Plot manager characteristics matter for plot level outcomes such as harvest. Identification of plot manager also allows for gender-specific productivity analysis, analysis of input allocation, gender-based crop cultivation patterns, etc.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Respondent selection/recording by plot</td>
-<td>- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about plot characteristics. Plot managers may differ from plot to plot which means that each plot may have a different respondent.<br />
-- For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the data at the same level of observation of the data.</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong>PP 6 - Crop Roster</strong></td>
-<td>Plot-crop as unit of observation for crops planted</td>
-<td> Allows for detailed accounting of each of the crops planted and enables plot-level analysis of production.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Permanent and temporary crops in the same roster but with differentiated questions.</td>
-<td>The plot may contain both permanent and temporary crops so both need to be reported in the same module, using the plot to anchor recall on planting. Permanent crops, such as trees, are likely not planted in the ongoing agricultural season, so year of planting instead of month of planting is recorded.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Reporting of seed quantity in non-standard units</td>
-<td>Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Reference period for seed acquisition is 'reference agricultural season'</td>
-<td>The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong><em>Post-Harvest Questionnaire</em></strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="left"><strong>Questionnaire module</strong></td>
-<td><strong>Key design choice</strong></td>
-<td><strong>Motivation/Considerations</strong></td>
-</tr>
-<tr class="odd">
-<td align="left"><strong>PH 7 - Field Crop Production</strong></td>
-<td>Respondent selection/recording by plot-crop</td>
-<td>- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about harvest. Plot managers may differ from plot to plot which means that each plot may have a different respondent.<br />
-- For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the harvest data.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Reporting of harvest quantity in non-standard units</td>
-<td>Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Reporting of harvest quantity in different conditions.</td>
-<td>The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Decision-maker concerning use of harvest recorded</td>
-<td>This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective.</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong>PH 8 - Field Crop Disposition</strong></td>
-<td>Respondent selection/recording by crop</td>
-<td> Decision maker may vary from crop to crop, data considered most reliable if each decision-maker can respond in person rather than proxy response.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Reporting of harvest sales quantity in non-standard units</td>
-<td>Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Reporting of harvest sales quantity in different conditions.</td>
-<td>The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed.</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td>Decision-maker concerning earnings from sold harvest recorded</td>
-<td>This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective.</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td>Reference period for seed acquisition is 'reference agricultural season'</td>
-<td>The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.</td>
-</tr>
-</tbody>
-</table>
+<template id="8d4f08d5-eb1c-4582-a5ed-82f76e3127d0"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-1caf2704{border-collapse:collapse;}.cl-1c8f8ba6{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1c8f8ba7{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1c8f8ba8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1c8fb2ac{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1c8fb2ad{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1c904e7e{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c904e7f{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c904e80{width:216pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-1caf2704'>
+<tbody><tr style="overflow-wrap:break-word;"><td  colspan="3"class="cl-1c904e7e"><p class="cl-1c8fb2ac"><span class="cl-1c8f8ba6">Post-Planting Questionnaire</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">Questionnaire module</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">Key design choice</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">Motivation/Considerations</span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="2"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PP 1 - Parcel Roster</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Land area measurement with GPS</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of parcels for which the GPS area has not been measured. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Non-standard units of measurement for farmer self-reported land area. </span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting in standard units (square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="2"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PP 2 - Parcel Details</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Individual-level ownership determined</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Asset ownership, particularly of land in agrarian settings, is a critical factor of individual wealth and security. Individual-level ownership of land allows for gender-based analysis and monitoring of select SDG Indicators when coupled with other questions on land. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Network identification</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8"> Network identification allows respondents to identify co-ownership of parcels with individuals outside of the household.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="3"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PP 3 - Plot Roster</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Land area measurement with GPS</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Farmer self-reported land area has been found to be systematically biased so that farmer-reported land area measure is considered unreliable. Farmer-reported land area is still collected as it can be used to impute the area of plots for which the GPS area has not been measured.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Non-standard units of measurement for farmer self-reported land area. </span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting in standard units (for example, square meters or hectares) may pose difficulties for respondents in some cases and can worsen reporting error. Non-standard units should be country-specific. In some cases, conversion factors for non-standard units may vary by region, district, province, etc. Conversion factors must be available (either through existing data or supplemental conversion factor development work) in order to convert all land areas to a common unit in the analysis phase.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Plot as primary unit of observation for land preparation and crop planting information</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Plot-level data collection is designed to improve respondent recall and makes possible analysis of the data at the plot-level. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="2"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PP 4 - Plot Details</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Recording of plot manager</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Plot manager characteristics matter for plot level outcomes such as harvest. Identification of plot manager also allows for gender-specific productivity analysis, analysis of input allocation, gender-based crop cultivation patterns, etc.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Respondent selection/recording by plot</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about plot characteristics. Plot managers may differ from plot to plot which means that each plot may have a different respondent. - For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the data at the same level of observation of the data.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="4"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PP 6 - Crop Roster</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Plot-crop as unit of observation for crops planted</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8"> Allows for detailed accounting of each of the crops planted and enables plot-level analysis of production. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Permanent and temporary crops in the same roster but with differentiated questions.</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">The plot may contain both permanent and temporary crops so both need to be reported in the same module, using the plot to anchor recall on planting. Permanent crops, such as trees, are likely not planted in the ongoing agricultural season, so year of planting instead of month of planting is recorded. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting of seed quantity in non-standard units</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reference period for seed acquisition is 'reference agricultural season'</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td  colspan="3"class="cl-1c904e7e"><p class="cl-1c8fb2ac"><span class="cl-1c8f8ba6">Post-Harvest Questionnaire</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">Questionnaire module</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">Key design choice</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">Motivation/Considerations</span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="4"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PH 7 - Field Crop Production</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Respondent selection/recording by plot-crop</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">- It is recommended that the plot manager, being the most knowledgeable person concerning the plot, respond to the questions about harvest. Plot managers may differ from plot to plot which means that each plot may have a different respondent. - For data analysis, recording the ID of the respondent allows controlling for the effect that the respondent's characteristics such as education on gender have on the harvest data.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting of harvest quantity in non-standard units</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting of harvest quantity in different conditions. </span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Decision-maker concerning use of harvest recorded</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td  rowspan="5"class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba7">PH 8 - Field Crop Disposition</span></p></td><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Respondent selection/recording by crop</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8"> Decision maker may vary from crop to crop, data considered most reliable if each decision-maker can respond in person rather than proxy response.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting of harvest sales quantity in non-standard units</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting in standard units (e.g. kilograms) poses difficulties for respondents and can worsen reporting error. Non-standard units should be country-specific. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reporting of harvest sales quantity in different conditions. </span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">The weight and value of harvest may vary depending on the condition in which it was harvested and/or weighed. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Decision-maker concerning earnings from sold harvest recorded</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">This allows for understanding household decision-making over the production process, which is especially relevant from a gender perspective. </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1c904e7f"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">Reference period for seed acquisition is 'reference agricultural season'</span></p></td><td class="cl-1c904e80"><p class="cl-1c8fb2ad"><span class="cl-1c8f8ba8">The reference period aligns with the actual production cycle aiding respondent recall and improving data reliability.</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="83f6c2a1-4386-4df8-836e-d95b8a3700d9"></div>
+<script>
+var dest = document.getElementById("83f6c2a1-4386-4df8-836e-d95b8a3700d9");
+var template = document.getElementById("8d4f08d5-eb1c-4582-a5ed-82f76e3127d0");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
 <div id="land-measurement" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Land Measurement</h2>
 <p>We briefly review the land measurement literature and methodological guidance that has emerged from a recent set of land measurement experiments, primarily focused in sub-Saharan African countries. Much of this literature has been summarized in Carletto et al. (2016), but this literature continues to evolve, particularly as most empirical evidence has been focused on sub-Saharan African production systems. The extent of possible land measurement error is highly dependent on the method used to measure land size. Three common measurement methods include compass and rope, plot measurement with GPS devices, and farmer self-reported land size. Remotely sensed plot measurement is also feasible if the GPS coordinates of the plot and its boundaries are identified. A longstanding approach to collect land size is the compass and rope (CR) method which uses poles, ropes and a compass to carry out a systematic measure of land size (FAO 1982). With a compass, measuring tape, ranging poles, a programmable calculator or other computational tool, and two to three persons, the CR method can measure the area of a plot with significantly more accuracy than by subjective estimates. GPS and CR measures require careful implementation by a field team, though GPS measurements may also be affected by the GPS device’s calibration error which can be affected by environmental factors. GPS measurements may be subject to more error than CR since the coordinates measured by the GPS device are not exact.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> When carefully implemented, CR provides precise estimates, and it can therefore be considered as a benchmark against which to assess the precision of other methods. However, it should be noted that the compass and rope method is not immune to measurement error of its own. In their analysis of three methodological validation studies, Carletto et al. (2016 and 2017) illustrate various cases of closing error in compass and rope measurements as well as provide anecdotal evidence of the challenges of this form of measurement, including significant difficulty in the reading of compasses due to the poor eyesight of many enumerators.</p>
@@ -608,7 +517,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["create_bookdown.pdf", "create_bookdown.epub"],
+"download": ["create_bookdown.pdf"],
 "toc": {
 "collapse": "subsection"
 }
