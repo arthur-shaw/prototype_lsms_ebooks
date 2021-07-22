@@ -1,0 +1,214 @@
+/* Make font of slide content bigger */
+.remark-slide-content p, ul, ol, li {
+  font-size: 1.6rem;
+}
+
+/* Remove slide number */
+.remark-slide-number {
+  display: none;
+}
+
+/* Font color for title slide */
+
+.green {
+  color: white;
+
+  text-shadow: 0 0 30px #16642AFF, 0 0 30px #16642AFF;
+
+}
+
+/* Title box at top of slide */
+
+.title {
+  padding-top: 0em;
+  border-top: 110px solid #777777;
+}
+
+
+.title h1 {
+  margin-top: -85px;
+  margin-bottom: 50px;
+}
+
+.title {
+  border-top-color: #0F2B1D;
+}
+
+.title-0 h1, .title-1 h1, .title-2 h1, .title-3 h1, .title-4 h1, .title-5 h1, .title-6 h1 {
+color: #FFFFFF;
+}
+
+/* Text box list */
+
+.box-txt { 
+font-size: 3rem;
+color: white;
+}
+
+.box-1, .box-2, .box-3, .box-4, .box-5, .box-6 {
+display: inline;  
+}
+
+.box-1, .box-2, .box-3, .box-4, .box-5, .box-6 {
+margin: 0em auto;
+overflow: hidden;
+padding: 0.1em 0.4em;
+font-weight: 600;
+display: table;
+text-align: center;
+}
+
+/* Common colors for boxes  */
+
+/* ... background for boxes and section title */
+
+.box-1, .section-title-1 {
+  background-color: #64428C;
+}
+
+.box-2, .section-title-2{
+  background-color: #B73325;
+}
+
+.box-3, .section-title-3 {
+  background-color: #F7AD40;
+}
+
+.box-4, .section-title-4 {
+  background-color: #74AC69FF;
+}
+
+.box-5, .section-title-5 {
+  background-color: #97C38BFF;
+}
+
+.box-6, .section-title-6 {
+  background-color: #BBDAADFF;
+}
+
+/* ....border colors for titles */
+
+.title-0 {
+border-top-color: #0872BA;
+}
+
+.title-1 {
+  border-top-color: #64428C;
+}
+
+.title-2 {
+  border-top-color: #B73325;
+}
+
+.title-3 {
+  border-top-color: #F7AD40;
+}
+
+.title-4 {
+  border-top-color: #74AC69FF;
+}
+
+.title-5 {
+  border-top-color: #97C38BFF;
+}
+
+.title-6 {
+  border-top-color: #BBDAADFF;
+}
+
+/* Two-column layout: 75/25 */
+.left-column-bg {
+width: 75%;
+height: 92%;
+float: left;
+}
+
+.right-column-sm {
+width: 25%;
+float: right;
+padding-top: 1em;
+}
+
+/* Three column layout */
+.pull-left-3 {
+float: left;
+width: 30%;
+padding: 0 2.5% 0 0;
+}
+
+.pull-middle-3 {
+float: left;
+width: 30%;
+padding: 0 2.5%;
+}
+
+.pull-right-3 {
+float: right;
+width: 30%;
+padding: 0 0 0 2.5%;
+}
+
+.pull-right-3 ~ * {
+clear: both;
+}
+
+/* lower half */
+.pull-left-low {
+  float: left;
+  height: 72%;  
+  width: 47%;
+}
+.pull-right-low {
+  float: right;
+  height: 72%;
+  width: 47%;
+}
+
+/* lower third */
+
+.pull-left-low-3 {
+  float: left;
+  height: 72%;  
+  width: 30%;
+  padding: 0 2.5% 0 0;
+}
+
+.pull-middle-low-3 {
+  float: left;
+  height: 72%;
+  width: 30%;
+  padding: 0 2.5%;
+}
+
+.pull-right-low-3 {
+  float: right;
+  height: 72%;
+  width: 30%;
+  padding: 0 0 0 2.5%;
+}
+
+.pull-right-low-3 ~ * {
+  clear: both;
+}
+
+/* Footnotes */
+
+.footnote {
+  position: absolute;
+  bottom: 0;
+  padding-right: 8em; /* to avoid the page numbering */ 
+}
+/* footnote identifier use: .fn[1] */
+.fn {
+  vertical-align: super;
+  font-size: 60%;
+}
+.footnote {
+  font-size: 0.7em;
+}
+.remark-slide-content .footnote  p, 
+.remark-slide-content .footnote li {
+  font-size: 0.7em!important;
+}
+.footnote .remark-code, 
+.footnote .remark-inline-code{ font-size: 0.8em!important; }
